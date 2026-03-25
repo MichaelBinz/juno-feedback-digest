@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dynatrace Presentation – reveal.js Template</title>
+
+  <!-- reveal.js v5.2.1 – self-contained local copy -->
+  <link rel="stylesheet" href="template/vendor/reveal.js/dist/reveal.css" />
+  <link rel="stylesheet" href="template/vendor/reveal.js/dist/theme/white.css" id="base-theme" />
+  <link rel="stylesheet" href="template/vendor/reveal.js/plugin/highlight/monokai.css" />
+
+  <!-- Dynatrace theme (override base theme) -->
+  <link rel="stylesheet" href="template/css/dynatrace.css" />
+  <link rel="stylesheet" href="template/css/layouts.css" />
+</head>
+<body>
+
+  <div class="reveal">
+    <div class="slides">
+
+      <!-- COVER SLIDE -->
+      <section class="cover">
+        <div class="cover__logo">
+          <img src="template/assets/images/dt-logo-white-horizontal.svg" alt="Dynatrace" height="30" />
+        </div>
+        <div class="cover__content">
+          <h1>Presentation Title</h1>
+          <h2>Subtitle or Event Name</h2>
+          <p class="cover__meta"><strong>Speaker Name</strong> &bull; Role &bull; Date</p>
+        </div>
+        <aside class="notes">
+          Welcome notes for the speaker.
+        </aside>
+      </section>
+
+      <!-- AGENDA -->
+      <section class="agenda">
+        <h2>Agenda</h2>
+        <ol>
+          <li>Section 1: Introduction</li>
+          <li>Section 2: Main Topic</li>
+          <li>Section 3: Results &amp; Demo</li>
+          <li>Section 4: Next Steps</li>
+        </ol>
+      </section>
+
+      <!-- SECTION DIVIDER -->
+      <section class="section">
+        <span class="section__number">01</span>
+        <h1>Introduction</h1>
+        <p>Brief overview of what this section covers</p>
+      </section>
+
+      <!-- STANDARD CONTENT -->
+      <section class="content">
+        <h2>Standard Content Slide</h2>
+        <ul>
+          <li>First key point &ndash; keep it concise</li>
+          <li>Second key point &ndash; one idea per bullet
+            <ul>
+              <li>Supporting detail</li>
+            </ul>
+          </li>
+          <li>Third key point</li>
+          <li>Fourth key point</li>
+        </ul>
+        <aside class="notes">
+          Speaker notes go here. These are only visible in speaker view.
+        </aside>
+      </section>
+
+      <!-- TWO-COLUMN CONTENT -->
+      <section class="content-2col">
+        <h2>Two-Column Layout</h2>
+        <div class="columns">
+          <div class="col">
+            <h3>Left Column</h3>
+            <ul>
+              <li>Point A</li>
+              <li>Point B</li>
+              <li>Point C</li>
+            </ul>
+          </div>
+          <div class="col">
+            <h3>Right Column</h3>
+            <ul>
+              <li>Point D</li>
+              <li>Point E</li>
+              <li>Point F</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- QUOTE SLIDE -->
+      <section class="quote">
+        <blockquote>
+          &ldquo;This is an impactful customer quote or key statistic that should stand on its own.&rdquo;
+        </blockquote>
+        <cite>&mdash; Customer Name, Company</cite>
+      </section>
+
+      <!-- METRICS / KPI SLIDE -->
+      <section class="metrics">
+        <h2>Key Metrics</h2>
+        <div class="metrics__grid">
+          <div class="metric-card">
+            <span class="metric-card__value">99.9%</span>
+            <span class="metric-card__label">Availability</span>
+            <span class="metric-card__trend metric-card__trend--up">▲ 0.2%</span>
+          </div>
+          <div class="metric-card">
+            <span class="metric-card__value">42ms</span>
+            <span class="metric-card__label">Response Time</span>
+            <span class="metric-card__trend metric-card__trend--down">▼ 8ms</span>
+          </div>
+          <div class="metric-card">
+            <span class="metric-card__value">1.2M</span>
+            <span class="metric-card__label">Requests / Day</span>
+            <span class="metric-card__trend metric-card__trend--up">▲ 15%</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- CODE SLIDE -->
+      <section class="code">
+        <h2>Code Example</h2>
+        <pre><code class="language-yaml" data-trim data-noescape>
+# Example Dynatrace configuration
+apiVersion: dynatrace.com/v1beta1
+kind: DynaKube
+metadata:
+  name: dynatrace
+  namespace: dynatrace
+spec:
+  apiUrl: https://ENVIRONMENT_ID.live.dynatrace.com/api
+  oneAgent:
+    cloudNativeFullStack:
+      tolerations:
+        - key: node-role.kubernetes.io/master
+          effect: NoSchedule
+        </code></pre>
+      </section>
+
+      <!-- SECTION DIVIDER 2 -->
+      <section class="section">
+        <span class="section__number">02</span>
+        <h1>Main Topic</h1>
+      </section>
+
+      <!-- CLOSING SLIDE -->
+      <section class="closing">
+        <div class="closing__logo">
+          <img src="template/assets/images/dt-logo-white-horizontal.svg" alt="Dynatrace" height="36" />
+        </div>
+        <h1>Thank You</h1>
+        <p class="closing__contact">Questions? <a href="mailto:hello@dynatrace.com">hello@dynatrace.com</a></p>
+        <aside class="notes">
+          Open for questions. Thank the audience.
+        </aside>
+      </section>
+
+    </div>
+  </div>
+
+  <!-- reveal.js core + plugins (self-contained) -->
+  <script src="template/vendor/reveal.js/dist/reveal.js"></script>
+  <script src="template/vendor/reveal.js/plugin/highlight/highlight.js"></script>
+  <script src="template/vendor/reveal.js/plugin/notes/notes.js"></script>
+  <script src="template/vendor/reveal.js/plugin/markdown/markdown.js"></script>
+  <script src="template/vendor/reveal.js/plugin/search/search.js"></script>
+  <script src="template/js/dynatrace-init.js"></script>
+</body>
+</html>

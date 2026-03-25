@@ -1,0 +1,1194 @@
+/* @theme dynatrace */
+/* @size 16:9  1280px  720px */
+/* @size HD    1920px 1080px */
+/* @size 4K    3840px 2160px */
+
+/*
+ * Dynatrace Marp Theme
+ * ============================================================
+ * Based on the official Dynatrace Corporate PPT 2026 template.
+ *
+ * Fonts: DTFlow family (DTFlow-Medium for headings, DTFlow-Light for body)
+ * Colors: Extracted from theme1.xml color scheme "Custom 3"
+ *
+ * Usage:
+ *   ---
+ *   marp: true
+ *   theme: dynatrace
+ *   size: 16:9      # or HD, 4K
+ *   paginate: true
+ *   ---
+ *
+ *   Apply layouts with: <!-- _class: layout-name -->
+ *
+ * ── RESOLUTION SCALING ──────────────────────────────────────
+ *  All dimensional values use em units so the entire layout
+ *  scales proportionally when you change the slide canvas.
+ *
+ *  To use a different resolution, set "size" in front-matter
+ *  AND override the base font-size in a style block:
+ *
+ *    Size        size directive   Base font-size
+ *    ----------  --------------   --------------
+ *    1280x720    size: 16:9       section { font-size: 24px }  (default)
+ *    1920x1080   size: HD         section { font-size: 36px }
+ *    2560x1440   (custom)         section { font-size: 48px }
+ *    3840x2160   size: 4K         section { font-size: 72px }
+ *
+ * ============================================================
+ */
+
+/* ------------------------------------------------------------
+   1. Font Loading – DTFlow family
+   ------------------------------------------------------------ */
+@font-face {
+  font-family: 'DTFlow';
+  src: url('theme/assets/fonts/DTFlow-Hairline.otf') format('opentype');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'DTFlow';
+  src: url('theme/assets/fonts/DTFlow-Thin.otf') format('opentype');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'DTFlow';
+  src: url('theme/assets/fonts/DTFlow-Extralight.otf') format('opentype');
+  font-weight: 250;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'DTFlow';
+  src: url('theme/assets/fonts/DTFlow-Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'DTFlow';
+  src: url('theme/assets/fonts/DTFlow-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'DTFlow';
+  src: url('theme/assets/fonts/DTFlow-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'DTFlow';
+  src: url('theme/assets/fonts/DTFlow-Semibold.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'DTFlow';
+  src: url('theme/assets/fonts/DTFlow-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'DTFlow';
+  src: url('theme/assets/fonts/DTFlow-Extrabold.otf') format('opentype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'DTFlow';
+  src: url('theme/assets/fonts/DTFlow-Heavy.otf') format('opentype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ------------------------------------------------------------
+   2. Design Tokens – from Dynatrace POTX theme1.xml
+   ------------------------------------------------------------ */
+:root {
+  /* Core brand palette (from clrScheme "Custom 3") */
+  --dt-dark1:      #000000;
+  --dt-light1:     #FFFFFF;
+  --dt-dark2:      #1A2440;
+  --dt-light2:     #6F747F;
+  --dt-accent1:    #49C2B3;
+  --dt-accent2:    #3BACF0;
+  --dt-accent3:    #1966FF;
+  --dt-accent4:    #5E28E5;
+  --dt-accent5:    #8D1CDC;
+  --dt-accent6:    #C93FDB;
+
+  /* Semantic colors */
+  --dt-color-bg-dark:    #1A2440;
+  --dt-color-bg-light:   #FFFFFF;
+  --dt-color-brand:      #1966FF;
+  --dt-color-white:      #FFFFFF;
+  --dt-color-text-dark:  #1A2440;
+  --dt-color-text-light: #FFFFFF;
+  --dt-color-text-muted: #6F747F;
+  --dt-color-subtle:     #B0B5BD;
+
+  /* Typography */
+  --dt-font-heading: 'DTFlow', Arial, Helvetica, sans-serif;
+  --dt-font-body:    'DTFlow', Arial, Helvetica, sans-serif;
+  --dt-font-mono:    'Cascadia Code', 'Fira Code', Consolas, monospace;
+}
+
+/* ------------------------------------------------------------
+   3. Base Section (default = content layout, white bg)
+      White slides get a gradient bar at the bottom and the
+      Dynatrace colour logo in the bottom-left corner, matching
+      the PowerPoint slide master.
+
+      NOTE: width/height are intentionally omitted here – Marp
+      derives them from the @size directive above.  The only
+      value you need to change for a different resolution is
+      font-size (see the scaling table at the top of this file).
+   ------------------------------------------------------------ */
+section {
+  font-family: var(--dt-font-body);
+  font-weight: 300;
+  font-size: 24px;          /* BASE – change this to scale the whole theme */
+  line-height: 1.5;
+  color: var(--dt-color-text-dark);
+  padding: 2.083em 2.5em;   /* 50px 60px at base */
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  overflow: hidden;
+  position: relative;
+
+  /* White bg + coloured logo (bottom-left) + gradient bar (bottom edge) */
+  background-color: var(--dt-color-bg-light);
+  background-image:
+    url('theme/assets/images/dt-logo-color-horizontal.svg'),
+    url('theme/assets/backgrounds/gradient-bar.png');
+  background-repeat: no-repeat, no-repeat;
+  background-position: left 2.5em bottom 0.667em, bottom center;
+  background-size: 5em auto, 100% 0.167em;
+}
+
+h1 {
+  font-family: var(--dt-font-heading);
+  font-weight: 500;
+  font-size: 1.833em;       /* 44px */
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  color: var(--dt-color-text-dark);
+  margin: 0 0 0.364em;      /* 16px at 44px own font-size */
+}
+
+h2 {
+  font-family: var(--dt-font-heading);
+  font-weight: 500;
+  font-size: 1.333em;       /* 32px */
+  line-height: 1.2;
+  color: var(--dt-color-text-dark);
+  margin: 0 0 0.625em;      /* 20px at 32px own font-size */
+  border: none;
+  padding: 0;
+}
+
+h3 {
+  font-family: var(--dt-font-heading);
+  font-weight: 500;
+  font-size: 1em;           /* 24px */
+  color: var(--dt-color-text-dark);
+  margin: 0 0 0.5em;        /* 12px at 24px own font-size */
+}
+
+h4 {
+  font-family: var(--dt-font-heading);
+  font-weight: 500;
+  font-size: 0.833em;       /* 20px */
+  color: var(--dt-color-text-muted);
+  margin: 0 0 0.4em;        /* 8px at 20px own font-size */
+}
+
+p { margin: 0 0 0.5em; }    /* 12px at 24px */
+
+ul, ol {
+  font-size: 0.917em;       /* 22px */
+  line-height: 1.6;
+  padding-left: 1.273em;    /* 28px at 22px own font-size */
+  margin: 0 0 0.545em;      /* 12px at 22px */
+}
+
+li { margin-bottom: 0.273em; }         /* 6px at 22px */
+li li { font-size: 0.9em; margin-bottom: 0.2em; }
+
+a { color: var(--dt-accent3); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+code {
+  font-family: var(--dt-font-mono);
+  font-size: 0.85em;
+  background: rgba(25, 102, 255, 0.08);
+  padding: 0.1em 0.3em;
+  border-radius: 3px;
+}
+
+pre {
+  font-family: var(--dt-font-mono);
+  font-size: 0.7em;         /* 16.8px at base */
+  background: #0F1421;
+  color: #E0E4EB;
+  padding: 1.2em 1.4em;     /* 20px 24px at 16.8px own font-size */
+  border-radius: 0.5em;     /* 8px at 16.8px */
+  overflow: auto;
+  margin: 0.75em 0;         /* 12px at 16.8px */
+}
+
+pre code {
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+  font-size: 1em;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.833em;       /* 20px */
+}
+
+th {
+  background-color: var(--dt-dark2);
+  color: var(--dt-color-white);
+  padding: 0.5em 0.8em;     /* 10px 16px at 20px own font-size */
+  text-align: left;
+  font-weight: 500;
+  font-family: var(--dt-font-heading);
+}
+
+td {
+  padding: 0.4em 0.8em;     /* 8px 16px at 20px own font-size */
+  border-bottom: 1px solid #E0E4EB;
+}
+
+tr:nth-child(even) td {
+  background-color: #F5F7FA;
+}
+
+blockquote {
+  border-left: 4px solid var(--dt-accent3);
+  padding: 0.5em 0.833em;   /* 12px 20px at 24px */
+  margin: 0.5em 0;          /* 12px at 24px */
+  font-style: italic;
+  color: var(--dt-color-text-muted);
+}
+
+strong { font-weight: 600; }
+em { font-style: italic; }
+
+/* Pagination badge (Marp ::after) */
+section::after {
+  font-family: var(--dt-font-body);
+  font-weight: 300;
+  font-size: 0.667em;       /* 16px at base section 24px */
+  color: var(--dt-color-text-muted);
+  content: attr(data-marpit-pagination);
+  position: absolute;
+  bottom: 1em;              /* 16px at ::after's own 16px */
+  right: 1.5em;             /* 24px at ::after's own 16px */
+}
+
+/* ------------------------------------------------------------
+   4. COVER / TITLE SLIDE
+      Full-bleed dark background with nebula/particle effects.
+      White Dynatrace logo (shield + text) in top-left corner.
+      Title vertically centred in the left half of the slide.
+   ------------------------------------------------------------ */
+section.cover {
+  background-color: var(--dt-dark2);
+  background-image: url('theme/assets/backgrounds/cover-gradient-bg.png');
+  background-size: cover;
+  background-position: center;
+  color: var(--dt-color-text-light);
+  justify-content: center;
+  padding: 3.75em 2.5em 2.5em;  /* 90px 60px 60px */
+}
+
+/* Logo – top-left */
+section.cover::before {
+  content: '';
+  position: absolute;
+  top: 1.333em;             /* 32px */
+  left: 2em;                /* 48px */
+  width: 7.5em;             /* 180px */
+  height: 2em;              /* 48px */
+  background: url('theme/assets/images/dt-logo-white-full.svg') no-repeat left center / contain;
+}
+
+section.cover h1 {
+  color: var(--dt-color-white);
+  font-size: 2em;           /* 48px */
+  font-weight: 500;
+  max-width: 75%;
+  margin-bottom: 0.167em;   /* 8px at 48px own font-size */
+}
+
+section.cover h2 {
+  color: var(--dt-color-white);
+  font-size: 1em;           /* 24px */
+  font-weight: 300;
+  opacity: 0.85;
+  margin-bottom: 0.667em;   /* 16px at 24px own font-size */
+}
+
+section.cover p {
+  color: var(--dt-color-white);
+  font-size: 0.75em;        /* 18px */
+  opacity: 0.7;
+}
+
+section.cover strong { color: var(--dt-color-white); opacity: 1; }
+section.cover::after { display: none; }
+
+/* ------------------------------------------------------------
+   5. TITLE SLIDE WITH SPEAKER(S)
+   ------------------------------------------------------------ */
+section.cover-speaker {
+  background-color: var(--dt-dark2);
+  background-image: url('theme/assets/backgrounds/cover-gradient-bg.png');
+  background-size: cover;
+  background-position: center;
+  color: var(--dt-color-text-light);
+  justify-content: center;
+  padding: 3.75em 2.5em 2.5em;  /* 90px 60px 60px */
+}
+
+/* Logo – top-left */
+section.cover-speaker::before {
+  content: '';
+  position: absolute;
+  top: 1.333em;             /* 32px */
+  left: 2em;                /* 48px */
+  width: 7.5em;             /* 180px */
+  height: 2em;              /* 48px */
+  background: url('theme/assets/images/dt-logo-white-full.svg') no-repeat left center / contain;
+}
+
+section.cover-speaker h1 {
+  color: var(--dt-color-white);
+  font-size: 1.833em;       /* 44px */
+  font-weight: 500;
+  margin-bottom: 0.136em;   /* 6px at 44px own font-size */
+}
+
+section.cover-speaker h2 {
+  color: var(--dt-color-white);
+  font-size: 0.917em;       /* 22px */
+  font-weight: 300;
+  opacity: 0.85;
+  margin-bottom: 0.909em;   /* 20px at 22px own font-size */
+}
+
+section.cover-speaker p {
+  color: var(--dt-color-white);
+  font-size: 0.75em;        /* 18px */
+  opacity: 0.7;
+}
+
+section.cover-speaker::after { display: none; }
+
+/* ------------------------------------------------------------
+   6. AGENDA
+   ------------------------------------------------------------ */
+section.agenda {
+  background-color: var(--dt-dark2);
+  background-image: url('theme/assets/backgrounds/section-dark-bg.png');
+  background-size: cover;
+  background-position: center;
+  color: var(--dt-color-text-light);
+  padding: 2.083em 2.5em;   /* 50px 60px */
+  position: relative;
+}
+
+/* Dark overlay for readability */
+section.agenda::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(26, 36, 64, 0.85) 0%,
+    rgba(26, 36, 64, 0.70) 60%,
+    rgba(26, 36, 64, 0.55) 100%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+section.agenda h1,
+section.agenda ul,
+section.agenda ol,
+section.agenda li,
+section.agenda p {
+  position: relative;
+  z-index: 1;
+}
+
+section.agenda h1 {
+  color: var(--dt-color-white);
+  font-size: 1.5em;         /* 36px */
+  margin-bottom: 0.667em;   /* 24px at 36px own font-size */
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+}
+
+section.agenda ul, section.agenda ol {
+  color: var(--dt-color-white);
+  font-size: 0.917em;       /* 22px */
+}
+
+section.agenda li {
+  margin-bottom: 0.455em;   /* 10px at 22px */
+  padding: 0.364em 0;       /* 8px at 22px */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+section.agenda::after { color: rgba(255, 255, 255, 0.4); position: relative; z-index: 1; }
+
+/* ------------------------------------------------------------
+   7. CONTENT (default white)
+   ------------------------------------------------------------ */
+section.content {
+  background-color: var(--dt-color-bg-light);
+  padding: 2.083em 2.5em;   /* 50px 60px */
+}
+
+/* ------------------------------------------------------------
+   8. CONTENT CENTERED
+   ------------------------------------------------------------ */
+section.content-centered {
+  text-align: center;
+  align-items: center;
+}
+
+section.content-centered p {
+  color: var(--dt-color-text-muted);
+  font-size: 0.833em;       /* 20px */
+}
+
+/* ------------------------------------------------------------
+   9. EYEBROW (small label above title)
+   ------------------------------------------------------------ */
+section.eyebrow {
+  padding: 2.083em 2.5em;   /* 50px 60px */
+}
+
+section.eyebrow h4 {
+  color: var(--dt-accent3);
+  font-weight: 500;
+  font-size: 0.667em;       /* 16px */
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 4px;
+}
+
+/* ------------------------------------------------------------
+   10. CONTENT 2-COLUMN
+   ------------------------------------------------------------ */
+section.content-2col {
+  padding: 2.083em 2.5em;   /* 50px 60px */
+}
+
+section.content-2col .columns {
+  display: flex;
+  flex-direction: row;
+  gap: 1.667em;             /* 40px */
+  width: 100%;
+  flex: 1;
+}
+
+section.content-2col .col {
+  flex: 1;
+  min-width: 0;
+}
+
+/* ------------------------------------------------------------
+   11. TITLE LEFT
+   ------------------------------------------------------------ */
+section.title-left {
+  justify-content: center;
+  padding: 2.083em 2.5em;   /* 50px 60px */
+}
+
+section.title-left h1 {
+  font-size: 2.333em;       /* 56px */
+  max-width: 70%;
+}
+
+/* ------------------------------------------------------------
+   12. TITLE CENTERED
+   ------------------------------------------------------------ */
+section.title-centered {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+section.title-centered h1 {
+  font-size: 2.333em;       /* 56px */
+  max-width: 85%;
+}
+
+section.title-centered p {
+  font-size: 0.833em;       /* 20px */
+  color: var(--dt-color-text-muted);
+  margin-top: 0.4em;        /* 8px at 20px own font-size */
+}
+
+/* ------------------------------------------------------------
+   13. TITLE MIDDLE LEFT / RIGHT
+   ------------------------------------------------------------ */
+section.title-middle-left {
+  justify-content: center;
+}
+
+section.title-middle-left h1 {
+  font-size: 2em;           /* 48px */
+  max-width: 65%;
+}
+
+section.title-middle-right {
+  justify-content: center;
+  align-items: flex-end;
+  text-align: right;
+}
+
+section.title-middle-right h1 {
+  font-size: 2em;           /* 48px */
+  max-width: 65%;
+}
+
+/* ------------------------------------------------------------
+   14. SECTION HEADER
+      Dark background from section-header-bg.png.
+      Rainbow gradient bar (6px → 0.25em) at the very top.
+      Dark overlay is applied via background-image layers so
+      ::before is free for the gradient bar (which uses height
+      in em – requires an active font-size, not font-size: 0).
+   ------------------------------------------------------------ */
+section.section {
+  background-color: var(--dt-dark2);
+  background-image:
+    url('theme/assets/backgrounds/section-dark-bg.png');
+  background-size: 100% 100%, cover;
+  background-position: center, center;
+  color: var(--dt-color-white);
+  justify-content: center;
+  padding: 2.083em 2.5em;   /* 50px 60px */
+  position: relative;
+}
+
+/* Rainbow gradient accent bar at top – scales with font-size */
+section.section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 0.25em;           /* 6px at base; scales with section font-size */
+  padding: 0;
+  background: linear-gradient(90deg,
+    var(--dt-accent1) 0%,
+    var(--dt-accent2) 20%,
+    var(--dt-accent3) 40%,
+    var(--dt-accent4) 60%,
+    var(--dt-accent5) 80%,
+    var(--dt-accent6) 100%
+  );
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* No pagination on section divider slides */
+section.section::after { display: none; }
+
+section.section h1 {
+  color: var(--dt-color-white);
+  font-size: 2.167em;       /* 52px */
+  margin-bottom: 0.231em;   /* 12px at 52px own font-size */
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+  position: relative;
+  z-index: 2;               /* above gradient bar */
+}
+
+section.section h2 {
+  color: var(--dt-color-white);
+  font-weight: 300;
+  font-size: 1em;           /* 24px */
+  opacity: 0.8;
+  position: relative;
+  z-index: 2;
+}
+
+section.section p {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.917em;       /* 22px */
+  max-width: 70%;
+  position: relative;
+  z-index: 2;
+}
+
+/* ------------------------------------------------------------
+   15. SECTION HEADER + CONTENT
+   ------------------------------------------------------------ */
+section.section-content {
+  background-color: var(--dt-dark2);
+  background-image:
+    url('theme/assets/backgrounds/section-dark-bg.png');
+  background-size: 100% 100%, cover;
+  background-position: center, center;
+  color: var(--dt-color-white);
+  padding: 2.083em 2.5em;   /* 50px 60px */
+  position: relative;
+}
+
+/* Rainbow gradient accent bar at top */
+section.section-content::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 0.25em;           /* 6px at base; scales with section font-size */
+  padding: 0;
+  background: linear-gradient(90deg,
+    var(--dt-accent1) 0%,
+    var(--dt-accent2) 20%,
+    var(--dt-accent3) 40%,
+    var(--dt-accent4) 60%,
+    var(--dt-accent5) 80%,
+    var(--dt-accent6) 100%
+  );
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* No pagination on section-content divider slides */
+section.section-content::after { display: none; }
+
+section.section-content h1 {
+  color: var(--dt-color-white);
+  font-size: 1.667em;       /* 40px */
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+  position: relative;
+  z-index: 2;
+}
+section.section-content h2 { color: var(--dt-color-white); position: relative; z-index: 2; }
+section.section-content ul, section.section-content ol { color: rgba(255, 255, 255, 0.85); position: relative; z-index: 2; }
+
+/* ------------------------------------------------------------
+   16. CONTENT + IMAGE
+   ------------------------------------------------------------ */
+section.content-image {
+  padding: 2.083em 2.5em;   /* 50px 60px */
+}
+
+section.content-image h2 { width: 100%; }
+
+section.content-image .content-image-layout {
+  display: flex;
+  flex-direction: row;
+  gap: 1.333em;             /* 32px */
+  flex: 1;
+  width: 100%;
+}
+
+section.content-image .content-image-text {
+  flex: 1;
+  min-width: 0;
+}
+
+section.content-image .content-image-visual {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+section.content-image .content-image-visual img {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 0.333em;   /* 8px */
+}
+
+/* Content + image LEFT variant */
+section.content-image-left {
+  padding: 2.083em 2.5em;   /* 50px 60px */
+}
+
+section.content-image-left .content-image-layout {
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 1.333em;             /* 32px */
+  flex: 1;
+  width: 100%;
+}
+
+section.content-image-left .content-image-text {
+  flex: 1;
+  min-width: 0;
+}
+
+section.content-image-left .content-image-visual {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+section.content-image-left .content-image-visual img {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 0.333em;   /* 8px */
+}
+
+/* ------------------------------------------------------------
+   17. IMAGE FULLSCREEN
+   ------------------------------------------------------------ */
+section.full-image {
+  background-color: #000;
+  background-image: none;
+  padding: 0;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+
+section.full-image h2 {
+  background: rgba(0, 0, 0, 0.65);
+  color: var(--dt-color-white);
+  font-size: 1em;           /* 24px */
+  font-weight: 300;
+  padding: 0.417em 1em;     /* 10px 24px at 24px own font-size */
+  margin: 0;
+}
+
+section.full-image::after { display: none; }
+
+/* ------------------------------------------------------------
+   18. QUOTE
+      Dark navy with large opening-quote mark in accent blue,
+      decorative sidebar strip on the right edge.
+   ------------------------------------------------------------ */
+section.quote {
+  background-color: var(--dt-dark2);
+  background-image: none;
+  color: var(--dt-color-white);
+  justify-content: center;
+  align-items: flex-start;
+  text-align: left;
+  padding: 2.5em 12.5em 2.5em 4.167em;  /* 60px 300px 60px 100px */
+}
+
+/* Sidebar decorative strip – right edge */
+section.quote::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 10em;              /* 240px */
+  height: 100%;
+  background: url('theme/assets/backgrounds/sidebar-strip.png') no-repeat right top;
+  background-size: auto 100%;
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+section.quote blockquote {
+  border-left: none;
+  font-size: 1.333em;       /* 32px */
+  line-height: 1.5;
+  color: var(--dt-color-white);
+  font-weight: 300;
+  font-style: italic;
+  padding: 0;
+  margin: 0 0 0.75em;       /* 24px at 32px own font-size */
+  position: relative;
+}
+
+section.quote blockquote::before {
+  content: '\201C';
+  font-size: 4.375em;       /* 140px at blockquote's 32px */
+  color: var(--dt-accent3);
+  opacity: 0.25;
+  position: absolute;
+  top: -0.43em;             /* -60px at 140px own font-size */
+  left: -0.357em;           /* -50px at 140px own font-size */
+  line-height: 1;
+  font-style: normal;
+}
+
+section.quote p {
+  font-size: 0.75em;        /* 18px */
+  color: var(--dt-color-text-light);
+}
+
+section.quote::after { display: none; }
+
+/* ------------------------------------------------------------
+   19. METRICS / KPI
+   ------------------------------------------------------------ */
+section.metrics {
+  background-color: var(--dt-dark2);
+  background-image: none;
+  color: var(--dt-color-white);
+  padding: 2.083em 2.5em;   /* 50px 60px */
+}
+
+section.metrics h1, section.metrics h2 {
+  color: var(--dt-color-white);
+}
+
+section.metrics .metrics-grid {
+  display: flex;
+  gap: 1em;                 /* 24px */
+  flex-wrap: wrap;
+  margin-top: 0.333em;      /* 8px at section 24px */
+}
+
+section.metrics .metric-card {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0.333em;   /* 8px */
+  padding: 1em 1.167em;     /* 24px 28px at section 24px */
+  min-width: 7.5em;         /* 180px */
+  flex: 1;
+}
+
+section.metrics .metric-value {
+  font-family: var(--dt-font-heading);
+  font-size: 2em;           /* 48px */
+  font-weight: 600;
+  color: var(--dt-color-white);
+  line-height: 1;
+  display: block;
+}
+
+section.metrics .metric-label {
+  font-size: 0.75em;        /* 18px */
+  color: var(--dt-color-text-muted);
+  margin-top: 0.333em;      /* 6px at 18px own font-size */
+  display: block;
+}
+
+section.metrics .metric-trend-up   { color: var(--dt-accent1); font-weight: 500; }
+section.metrics .metric-trend-down { color: #FF6B6B; font-weight: 500; }
+
+section.metrics::after { color: rgba(255, 255, 255, 0.4); }
+
+/* ------------------------------------------------------------
+   20. TEXT COLUMNS
+   ------------------------------------------------------------ */
+section.text-2col,
+section.text-3col,
+section.text-4col {
+  padding: 2.083em 2.5em;   /* 50px 60px */
+}
+
+section.text-2col h1,
+section.text-3col h1,
+section.text-4col h1 {
+  width: 100%;
+  flex: 0 0 auto;
+}
+
+section.text-2col .columns,
+section.text-3col .columns,
+section.text-4col .columns {
+  display: flex;
+  gap: 1.333em;             /* 32px */
+  flex: 1;
+  width: 100%;
+}
+
+section.text-2col .col,
+section.text-3col .col,
+section.text-4col .col {
+  flex: 1;
+  min-width: 0;
+}
+
+/* ------------------------------------------------------------
+   21. CODE SLIDE
+   ------------------------------------------------------------ */
+section.code {
+  background-color: #0F1421;
+  background-image: none;
+  color: var(--dt-color-text-light);
+  padding: 2.083em 2.5em;   /* 50px 60px */
+}
+
+section.code h1, section.code h2 { color: var(--dt-color-white); }
+section.code pre { flex: 1; font-size: 0.8em; }
+section.code::after { color: rgba(255, 255, 255, 0.3); }
+
+/* ------------------------------------------------------------
+   22. CLOSING / THANK YOU
+      Dark background with nebula/particle effects (same feel
+      as cover).  Content is centred.  Dynatrace logo below
+      the main text.
+   ------------------------------------------------------------ */
+section.closing {
+  background-color: var(--dt-dark2);
+  background-image: url('theme/assets/backgrounds/closing-dark-bg.png');
+  background-size: cover;
+  background-position: center;
+  color: var(--dt-color-white);
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* Centred logo below content */
+section.closing::before {
+  content: '';
+  position: absolute;
+  bottom: 2em;              /* 48px at section 24px */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 6.667em;           /* 160px */
+  height: 1.667em;          /* 40px */
+  background: url('theme/assets/images/dt-logo-white-full.svg') no-repeat center / contain;
+  pointer-events: none;
+}
+
+section.closing h1 {
+  color: var(--dt-color-white);
+  font-size: 2.333em;       /* 56px */
+  margin-bottom: 0.286em;   /* 16px at 56px own font-size */
+}
+
+section.closing p {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.833em;       /* 20px */
+}
+
+section.closing a { color: var(--dt-accent2); }
+section.closing::after { display: none; }
+
+/* ------------------------------------------------------------
+   23. BLANK
+   ------------------------------------------------------------ */
+section.blank {
+  background-color: var(--dt-color-white);
+  padding: 0;
+}
+
+section.blank::after { display: none; }
+
+section.blank-dark {
+  background-color: var(--dt-dark2);
+  background-image: none;
+  padding: 0;
+}
+
+section.blank-dark::after { display: none; }
+
+/* ============================================================
+   24. ADDITIONAL LAYOUTS
+   ============================================================ */
+
+/* ------------------------------------------------------------
+   CUSTOMER STORY
+   ------------------------------------------------------------ */
+section.customer-story {
+  background-color: var(--dt-color-bg-light);
+  padding: 2.083em 2.5em;   /* 50px 60px */
+}
+
+section.customer-story .customer-logo img {
+  max-height: 2.083em;      /* 50px */
+  margin-bottom: 0.667em;   /* 16px at section 24px */
+}
+
+section.customer-story blockquote {
+  font-size: 1.167em;       /* 28px */
+  font-style: italic;
+  color: var(--dt-color-text-dark);
+  border-left: 4px solid var(--dt-accent3);
+  padding: 0.429em 0.857em; /* 12px 24px at 28px own font-size */
+  margin: 0.571em 0;        /* 16px at 28px own font-size */
+}
+
+section.customer-story p {
+  font-size: 0.833em;       /* 20px */
+  color: var(--dt-color-text-muted);
+}
+
+/* ------------------------------------------------------------
+   HERO IMAGE + CARDS
+   ------------------------------------------------------------ */
+section.hero-cards {
+  background-color: var(--dt-color-bg-light);
+  background-image: none;
+  padding: 0;
+  justify-content: flex-start;
+}
+
+section.hero-cards .hero-image {
+  width: 100%;
+  height: 55%;
+  overflow: hidden;
+  flex: 0 0 auto;
+}
+
+section.hero-cards .hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+section.hero-cards .hero-grid {
+  display: flex;
+  gap: 0.833em;             /* 20px */
+  padding: 0.833em 2.5em;   /* 20px 60px */
+  flex: 1;
+}
+
+section.hero-cards .hero-card {
+  flex: 1;
+  background: var(--dt-color-bg-light);
+  border: 1px solid #E0E4EB;
+  border-radius: 0.333em;   /* 8px */
+  padding: 0.833em;         /* 20px */
+}
+
+section.hero-cards .hero-card h3 {
+  font-size: 0.917em;       /* 22px */
+  margin-bottom: 0.273em;   /* 6px at 22px own font-size */
+}
+
+section.hero-cards .hero-card p {
+  font-size: 0.75em;        /* 18px */
+  color: var(--dt-color-text-muted);
+}
+
+section.hero-cards::after { display: none; }
+
+/* ------------------------------------------------------------
+   MENU / NAVIGATION
+   ------------------------------------------------------------ */
+section.menu {
+  background-color: var(--dt-dark2);
+  background-image: none;
+  color: var(--dt-color-white);
+  padding: 2.083em 2.5em;   /* 50px 60px */
+  justify-content: center;
+}
+
+section.menu h1, section.menu h2 {
+  color: var(--dt-color-white);
+  margin-bottom: 0.833em;   /* ~20px, approximated across h1/h2 sizes */
+}
+
+section.menu .menu-grid {
+  display: flex;
+  gap: 0.833em;             /* 20px */
+  flex-wrap: wrap;
+}
+
+section.menu .menu-item {
+  flex: 1;
+  min-width: 8.333em;       /* 200px */
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0.333em;   /* 8px */
+  padding: 1em 0.833em;     /* 24px 20px */
+  text-align: center;
+}
+
+section.menu .menu-item h3 {
+  font-size: 1em;           /* 24px */
+  color: var(--dt-color-white);
+  margin-bottom: 0.25em;    /* 6px at 24px own font-size */
+}
+
+section.menu .menu-item p {
+  font-size: 0.75em;        /* 18px */
+  color: rgba(255, 255, 255, 0.6);
+}
+
+section.menu::after { color: rgba(255, 255, 255, 0.4); }
+
+/* ------------------------------------------------------------
+   ICON CARDS
+   ------------------------------------------------------------ */
+section.icon-cards {
+  background-color: var(--dt-color-bg-light);
+  padding: 2.083em 2.5em;   /* 50px 60px */
+}
+
+section.icon-cards .icon-grid {
+  display: flex;
+  gap: 1.167em;             /* 28px */
+  flex-wrap: wrap;
+  margin-top: 0.5em;        /* 12px */
+}
+
+section.icon-cards .icon-card {
+  flex: 1;
+  min-width: 6.667em;       /* 160px */
+  text-align: center;
+  padding: 0.833em;         /* 20px */
+}
+
+section.icon-cards .icon-card img {
+  height: 2.333em;          /* 56px */
+  margin-bottom: 0.5em;     /* 12px */
+}
+
+section.icon-cards .icon-card h3 {
+  font-size: 0.917em;       /* 22px */
+  margin-bottom: 0.273em;   /* 6px at 22px own font-size */
+}
+
+section.icon-cards .icon-card p {
+  font-size: 0.75em;        /* 18px */
+  color: var(--dt-color-text-muted);
+}
+
+/* ------------------------------------------------------------
+   IMAGES GRID (2–8 images)
+   ------------------------------------------------------------ */
+section.images {
+  background-color: var(--dt-color-bg-light);
+  padding: 2.083em 2.5em;   /* 50px 60px */
+}
+
+section.images .images-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em;               /* 12px */
+  margin-top: 0.5em;        /* 12px */
+}
+
+section.images .images-grid img {
+  flex: 1 1 calc(50% - 0.5em);
+  max-width: calc(50% - 0.25em);
+  border-radius: 0.333em;   /* 8px */
+  object-fit: cover;
+}
+
+section.images .images-grid.images-3col img {
+  flex: 1 1 calc(33.33% - 0.5em);
+  max-width: calc(33.33% - 0.5em);
+}
+
+section.images .images-grid.images-4col img {
+  flex: 1 1 calc(25% - 0.5em);
+  max-width: calc(25% - 0.5em);
+}

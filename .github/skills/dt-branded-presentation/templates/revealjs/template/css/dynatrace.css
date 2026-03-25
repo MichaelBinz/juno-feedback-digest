@@ -1,0 +1,257 @@
+/*
+ * Dynatrace reveal.js Theme
+ * ============================================================
+ * Based on the official Dynatrace Corporate PPT 2026 template.
+ *
+ * Fonts: DTFlow family (DTFlow-Medium for headings, DTFlow-Light for body)
+ * Colors: Extracted from theme1.xml color scheme "Custom 3"
+ * ============================================================
+ */
+
+/* ------------------------------------------------------------
+   1. Font Loading – DTFlow family
+   ------------------------------------------------------------ */
+@font-face {
+  font-family: 'DTFlow';
+  src: url('../assets/fonts/DTFlow-Hairline.otf') format('opentype');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'DTFlow';
+  src: url('../assets/fonts/DTFlow-Thin.otf') format('opentype');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'DTFlow';
+  src: url('../assets/fonts/DTFlow-Extralight.otf') format('opentype');
+  font-weight: 250;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'DTFlow';
+  src: url('../assets/fonts/DTFlow-Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'DTFlow';
+  src: url('../assets/fonts/DTFlow-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'DTFlow';
+  src: url('../assets/fonts/DTFlow-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'DTFlow';
+  src: url('../assets/fonts/DTFlow-Semibold.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'DTFlow';
+  src: url('../assets/fonts/DTFlow-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'DTFlow';
+  src: url('../assets/fonts/DTFlow-Extrabold.otf') format('opentype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'DTFlow';
+  src: url('../assets/fonts/DTFlow-Heavy.otf') format('opentype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ------------------------------------------------------------
+   2. CSS Custom Properties (Design Tokens)
+   ------------------------------------------------------------ */
+:root {
+  /* Core brand palette (from Dynatrace POTX clrScheme "Custom 3") */
+  --dt-dark1:      #000000;
+  --dt-light1:     #FFFFFF;
+  --dt-dark2:      #1A2440;
+  --dt-light2:     #6F747F;
+  --dt-accent1:    #49C2B3;
+  --dt-accent2:    #3BACF0;
+  --dt-accent3:    #1966FF;
+  --dt-accent4:    #5E28E5;
+  --dt-accent5:    #8D1CDC;
+  --dt-accent6:    #C93FDB;
+
+  /* Semantic colors */
+  --dt-color-bg-dark:    #1A2440;
+  --dt-color-bg-light:   #FFFFFF;
+  --dt-color-brand:      #1966FF;
+  --dt-color-white:      #FFFFFF;
+  --dt-color-text-dark:  #1A2440;
+  --dt-color-text-light: #FFFFFF;
+  --dt-color-text-muted: #6F747F;
+  --dt-color-subtle:     #B0B5BD;
+
+  /* Typography */
+  --dt-font-heading: 'DTFlow', Arial, Helvetica, sans-serif;
+  --dt-font-body:    'DTFlow', Arial, Helvetica, sans-serif;
+  --dt-font-mono:    'Cascadia Code', 'Fira Code', Consolas, monospace;
+
+  /* Spacing – generous for 1920×1080 virtual canvas */
+  --dt-slide-padding-x: 80px;
+  --dt-slide-padding-y: 60px;
+
+  /* reveal.js CSS variables
+     Font sizes are set for a 1920×1080 virtual canvas.
+     reveal.js auto-scales the entire slide to fit the viewport,
+     so these px values stay proportional at any screen size. */
+  --r-background-color:      var(--dt-color-bg-light);
+  --r-main-font:             var(--dt-font-body);
+  --r-main-font-size:        30px;
+  --r-main-color:            var(--dt-color-text-dark);
+  --r-heading-font:          var(--dt-font-heading);
+  --r-heading-color:         var(--dt-color-text-dark);
+  --r-heading-font-weight:   500;
+  --r-heading-line-height:   1.2;
+  --r-heading-letter-spacing: -0.01em;
+  --r-heading1-size:         56px;
+  --r-heading2-size:         44px;
+  --r-heading3-size:         34px;
+  --r-heading4-size:         28px;
+  --r-link-color:            var(--dt-accent3);
+  --r-link-color-hover:      #0D4FCC;
+  --r-selection-background-color: var(--dt-accent3);
+  --r-selection-color:       var(--dt-color-white);
+  --r-block-margin:          16px;
+}
+
+/* ------------------------------------------------------------
+   3. Base Slide Styles
+   ------------------------------------------------------------ */
+.reveal {
+  font-family: var(--dt-font-body);
+  font-weight: 300;
+}
+
+.reveal .slides section {
+  box-sizing: border-box;
+  padding: var(--dt-slide-padding-y) var(--dt-slide-padding-x);
+  text-align: left;
+  height: 100%;
+  top: 0 !important;
+  left: 0 !important;
+}
+
+/* Dark outer area when viewport is larger than the slide (e.g. 2560×1440) */
+.reveal-viewport,
+body {
+  background-color: var(--dt-color-bg-dark, #1A2440) !important;
+}
+
+.reveal h1, .reveal h2, .reveal h3, .reveal h4 {
+  font-family: var(--dt-font-heading);
+  font-weight: 500;
+  text-transform: none;
+}
+
+/* Slide number */
+.reveal .slide-number {
+  font-family: var(--dt-font-body);
+  font-weight: 300;
+  font-size: 18px;
+  background: transparent;
+  color: var(--dt-color-text-muted);
+  bottom: 16px;
+  right: 24px;
+}
+
+/* Links */
+.reveal a { color: var(--dt-accent3); text-decoration: none; }
+.reveal a:hover { text-decoration: underline; color: #0D4FCC; }
+
+/* Code blocks */
+.reveal pre {
+  box-shadow: none;
+  border-radius: 8px;
+  font-family: var(--dt-font-mono);
+  font-size: 0.7em;
+  width: 100%;
+  background: #0F1421;
+}
+
+.reveal code {
+  font-family: var(--dt-font-mono);
+}
+
+.reveal pre code {
+  padding: 20px 24px;
+  max-height: 500px;
+}
+
+/* Tables */
+.reveal table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85em;
+}
+
+.reveal table th {
+  background-color: var(--dt-dark2);
+  color: var(--dt-color-white);
+  padding: 12px 20px;
+  text-align: left;
+  font-weight: 500;
+  font-size: 26px;
+  font-family: var(--dt-font-heading);
+}
+
+.reveal table td {
+  padding: 10px 20px;
+  font-size: 26px;
+  border-bottom: 1px solid #E0E4EB;
+}
+
+.reveal table tr:nth-child(even) td {
+  background-color: #F5F7FA;
+}
+
+/* Blockquote */
+.reveal blockquote {
+  border-left: 4px solid var(--dt-accent3);
+  background: transparent;
+  box-shadow: none;
+  font-style: italic;
+  padding: 20px 28px;
+  font-size: 28px;
+  line-height: 1.5;
+  width: 100%;
+}
+
+/* Lists */
+.reveal ul, .reveal ol {
+  font-size: 30px;
+  line-height: 1.55;
+}
+
+.reveal li {
+  margin-bottom: 8px;
+}
+
+/* Strong */
+.reveal strong { font-weight: 600; }

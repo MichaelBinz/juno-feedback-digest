@@ -1,0 +1,969 @@
+/*
+ * Dynatrace reveal.js – Slide Layout Classes
+ * ============================================================
+ * Each layout is applied as a CSS class on the <section> element.
+ * Based on Dynatrace Corporate PPT 2026 slide masters.
+ * ============================================================
+ */
+
+/* ------------------------------------------------------------
+   COVER / Title Slide
+   ------------------------------------------------------------ */
+.reveal .slides section.cover {
+  background-color: var(--dt-dark2);
+  background-image: url('../assets/backgrounds/cover-gradient-bg.png');
+  background-size: cover;
+  background-position: center;
+  color: var(--dt-color-text-light);
+  padding: 100px 80px 80px;
+}
+
+.reveal .slides section.cover.present {
+  display: flex !important;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Logo – top-left: rendered via .cover__logo in HTML; no ::before needed */
+
+.reveal section.cover h1 {
+  color: var(--dt-color-white);
+  font-size: 72px;
+  font-weight: 500;
+  max-width: 75%;
+  margin-bottom: 12px;
+}
+
+.reveal section.cover h2 {
+  color: var(--dt-color-white);
+  font-size: 36px;
+  font-weight: 300;
+  opacity: 0.85;
+  margin-bottom: 20px;
+  text-shadow: none;
+}
+
+.reveal section.cover p {
+  color: var(--dt-color-white);
+  font-size: 24px;
+  opacity: 0.7;
+}
+
+.reveal section.cover .cover__logo {
+  position: absolute;
+  top: 20px;
+  left: 24px;
+}
+
+.reveal section.cover .cover__logo img {
+  height: 30px;
+}
+
+/* ------------------------------------------------------------
+   SECTION HEADER
+   ------------------------------------------------------------ */
+.reveal .slides section.section {
+  background-color: var(--dt-dark2);
+  background-image: url('../assets/backgrounds/section-dark-bg.png');
+  background-size: cover;
+  background-position: center;
+  color: var(--dt-color-white);
+  padding: 60px 80px;
+}
+
+.reveal .slides section.section.present {
+  display: flex !important;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Gradient accent bar at top */
+.reveal section.section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: linear-gradient(90deg,
+    var(--dt-accent1) 0%,
+    var(--dt-accent2) 20%,
+    var(--dt-accent3) 40%,
+    var(--dt-accent4) 60%,
+    var(--dt-accent5) 80%,
+    var(--dt-accent6) 100%
+  );
+  z-index: 2;
+}
+
+/* All section content above the overlay */
+.reveal section.section h1,
+.reveal section.section h2,
+.reveal section.section p,
+.reveal section.section .section__number {
+  position: relative;
+  z-index: 1;
+}
+
+.reveal section.section h1 {
+  color: var(--dt-color-white);
+  font-size: 68px;
+  font-weight: 500;
+  margin-bottom: 16px;
+  max-width: 80%;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+}
+
+.reveal section.section h2 {
+  color: var(--dt-color-white);
+  font-weight: 300;
+  font-size: 34px;
+  opacity: 0.8;
+  text-shadow: none;
+}
+
+.reveal section.section .section__number {
+  font-size: 120px;
+  font-weight: 100;
+  color: var(--dt-accent3);
+  opacity: 0.5;
+  display: block;
+  margin-bottom: 12px;
+  line-height: 1;
+}
+
+.reveal section.section p {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 28px;
+  max-width: 70%;
+}
+
+/* ------------------------------------------------------------
+   AGENDA
+   ------------------------------------------------------------ */
+.reveal .slides section.agenda {
+  background-color: var(--dt-dark2);
+  background-image: url('../assets/backgrounds/section-dark-bg.png');
+  background-size: cover;
+  background-position: center;
+  color: var(--dt-color-white);
+}
+
+.reveal section.agenda h1, .reveal section.agenda h2 {
+  color: var(--dt-color-white);
+  font-size: 48px;
+}
+
+.reveal section.agenda ul li, .reveal section.agenda ol li {
+  color: var(--dt-color-white);
+  font-size: 30px;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* ------------------------------------------------------------
+   CONTENT (default white)
+   ------------------------------------------------------------ */
+.reveal .slides section.content {
+  background-color: var(--dt-color-bg-light);
+  color: var(--dt-color-text-dark);
+  background-image:
+    url('../assets/images/dt-logo-color-horizontal.svg'),
+    url('../assets/backgrounds/gradient-bar.png');
+  background-repeat: no-repeat, no-repeat;
+  background-position: left 80px bottom 20px, bottom center;
+  background-size: 140px auto, 100% 4px;
+}
+
+/* ------------------------------------------------------------
+   CONTENT 2-COLUMN
+   ------------------------------------------------------------ */
+.reveal .slides section.content-2col {
+  background-color: var(--dt-color-bg-light);
+  background-image:
+    url('../assets/images/dt-logo-color-horizontal.svg'),
+    url('../assets/backgrounds/gradient-bar.png');
+  background-repeat: no-repeat, no-repeat;
+  background-position: left 80px bottom 20px, bottom center;
+  background-size: 140px auto, 100% 4px;
+}
+
+.reveal section.content-2col .columns {
+  display: flex;
+  gap: 48px;
+  width: 100%;
+}
+
+.reveal section.content-2col .col {
+  flex: 1;
+  min-width: 0;
+}
+
+/* ------------------------------------------------------------
+   CONTENT + IMAGE
+   ------------------------------------------------------------ */
+.reveal .slides section.content-image.present {
+  display: flex !important;
+  flex-direction: row;
+  gap: 48px;
+  align-items: stretch;
+  background-image:
+    url('../assets/images/dt-logo-color-horizontal.svg'),
+    url('../assets/backgrounds/gradient-bar.png');
+  background-repeat: no-repeat, no-repeat;
+  background-position: left 80px bottom 20px, bottom center;
+  background-size: 140px auto, 100% 4px;
+}
+
+.reveal section.content-image h2 {
+  width: 100%;
+  flex: 0 0 auto;
+}
+
+.reveal section.content-image .content-image__text {
+  flex: 1;
+}
+
+.reveal section.content-image .content-image__visual {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.reveal section.content-image .content-image__visual img {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 8px;
+}
+
+/* ------------------------------------------------------------
+   FULL-IMAGE
+   ------------------------------------------------------------ */
+.reveal .slides section.full-image {
+  background-color: #000;
+  background-image: none;
+  padding: 0;
+}
+
+.reveal .slides section.full-image.present {
+  display: flex !important;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.reveal section.full-image .full-image__caption {
+  background: rgba(0, 0, 0, 0.65);
+  color: var(--dt-color-white);
+  font-size: 28px;
+  font-weight: 300;
+  padding: 14px 28px;
+}
+
+/* ------------------------------------------------------------
+   QUOTE
+   ------------------------------------------------------------ */
+.reveal .slides section.quote {
+  background-color: var(--dt-dark2);
+  background-image: none;
+  color: var(--dt-color-white);
+  text-align: left;
+  padding: 80px 320px 80px 120px;
+}
+
+.reveal .slides section.quote.present {
+  display: flex !important;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+/* Sidebar decorative strip – right edge */
+.reveal section.quote::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 240px;
+  height: 100%;
+  background: url('../assets/backgrounds/sidebar-strip.png') no-repeat right top;
+  background-size: auto 100%;
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+.reveal section.quote blockquote {
+  border-left: none;
+  font-size: 40px;
+  color: var(--dt-color-white);
+  font-weight: 300;
+  position: relative;
+  padding: 0;
+}
+
+.reveal section.quote blockquote::before {
+  content: '\201C';
+  font-size: 160px;
+  color: var(--dt-accent3);
+  opacity: 0.25;
+  position: absolute;
+  top: -70px;
+  left: -60px;
+  line-height: 1;
+  font-style: normal;
+}
+
+.reveal section.quote cite {
+  font-size: 24px;
+  color: var(--dt-color-text-muted);
+  font-style: normal;
+  display: block;
+  margin-top: 28px;
+}
+
+/* ------------------------------------------------------------
+   METRICS / KPI
+   ------------------------------------------------------------ */
+.reveal .slides section.metrics {
+  background-color: var(--dt-dark2);
+  background-image: none;
+  color: var(--dt-color-white);
+}
+
+.reveal section.metrics h1, .reveal section.metrics h2 {
+  color: var(--dt-color-white);
+}
+
+.reveal section.metrics .metrics__grid {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+
+.reveal section.metrics .metric-card {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 28px 32px;
+  flex: 1;
+  min-width: 200px;
+}
+
+.reveal section.metrics .metric-card__value {
+  font-family: var(--dt-font-heading);
+  font-size: 56px;
+  font-weight: 600;
+  color: var(--dt-color-white);
+  line-height: 1;
+  display: block;
+}
+
+.reveal section.metrics .metric-card__label {
+  font-size: 22px;
+  color: var(--dt-color-text-muted);
+  margin-top: 8px;
+  display: block;
+}
+
+.reveal section.metrics .metric-card__trend {
+  font-size: 18px;
+  display: block;
+  margin-top: 6px;
+}
+
+.reveal section.metrics .metric-card__trend--up   { color: var(--dt-accent1); font-weight: 500; }
+.reveal section.metrics .metric-card__trend--down { color: #FF6B6B; font-weight: 500; }
+
+/* ------------------------------------------------------------
+   CODE SLIDE
+   ------------------------------------------------------------ */
+.reveal .slides section.code {
+  background-color: #0F1421;
+  background-image: none;
+  color: var(--dt-color-text-light);
+}
+
+.reveal section.code h1, .reveal section.code h2 {
+  color: var(--dt-color-white);
+}
+
+/* ------------------------------------------------------------
+   CLOSING / THANK YOU
+   ------------------------------------------------------------ */
+.reveal .slides section.closing {
+  background-color: var(--dt-dark2);
+  background-image: url('../assets/backgrounds/closing-dark-bg.png');
+  background-size: cover;
+  background-position: center;
+  color: var(--dt-color-white);
+  text-align: center;
+}
+
+.reveal .slides section.closing.present {
+  display: flex !important;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Centred logo below content */
+.reveal section.closing::before {
+  content: '';
+  position: absolute;
+  bottom: 48px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 160px;
+  height: 40px;
+  background: url('../assets/images/dt-logo-white-full.svg') no-repeat center / contain;
+  pointer-events: none;
+}
+
+.reveal section.closing h1 {
+  color: var(--dt-color-white);
+  font-size: 64px;
+  margin-bottom: 20px;
+}
+
+.reveal section.closing p {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 26px;
+}
+
+.reveal section.closing a { color: var(--dt-accent2); }
+
+.reveal section.closing .closing__logo {
+  margin-bottom: 24px;
+}
+
+.reveal section.closing .closing__logo img {
+  height: 36px;
+}
+
+/* ------------------------------------------------------------
+   EYEBROW LABEL (above titles)
+   ------------------------------------------------------------ */
+.reveal .eyebrow-label {
+  color: var(--dt-accent3);
+  font-weight: 500;
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 6px;
+  display: block;
+}
+
+/* ------------------------------------------------------------
+   TITLE ONLY (large centered)
+   ------------------------------------------------------------ */
+.reveal .slides section.title-centered {
+  text-align: center;
+  background-color: var(--dt-color-bg-light);
+  color: var(--dt-color-text-dark);
+  background-image:
+    url('../assets/images/dt-logo-color-horizontal.svg'),
+    url('../assets/backgrounds/gradient-bar.png');
+  background-repeat: no-repeat, no-repeat;
+  background-position: left 80px bottom 20px, bottom center;
+  background-size: 140px auto, 100% 4px;
+}
+
+.reveal .slides section.title-centered.present {
+  display: flex !important;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.reveal section.title-centered h1 {
+  font-size: 64px;
+  color: var(--dt-color-text-dark);
+  max-width: 85%;
+}
+
+.reveal section.title-centered p {
+  font-size: 28px;
+  color: var(--dt-color-text-muted);
+  margin-top: 16px;
+}
+
+/* ------------------------------------------------------------
+   BLANK
+   ------------------------------------------------------------ */
+.reveal .slides section.blank {
+  background-color: var(--dt-color-white);
+  padding: 0;
+}
+
+.reveal .slides section.blank-dark {
+  background-color: var(--dt-dark2);
+  background-image: none;
+  padding: 0;
+}
+
+/* ------------------------------------------------------------
+   CONTENT CENTERED
+   ------------------------------------------------------------ */
+.reveal .slides section.content-centered {
+  background-color: var(--dt-color-bg-light);
+  color: var(--dt-color-text-dark);
+  text-align: center;
+  background-image:
+    url('../assets/images/dt-logo-color-horizontal.svg'),
+    url('../assets/backgrounds/gradient-bar.png');
+  background-repeat: no-repeat, no-repeat;
+  background-position: left 80px bottom 20px, bottom center;
+  background-size: 140px auto, 100% 4px;
+}
+
+.reveal .slides section.content-centered.present {
+  display: flex !important;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+/* ------------------------------------------------------------
+   SECTION HEADER + CONTENT
+   ------------------------------------------------------------ */
+.reveal .slides section.section-content {
+  background-color: var(--dt-dark2);
+  background-image: url('../assets/backgrounds/section-dark-bg.png');
+  background-size: cover;
+  background-position: center;
+  color: var(--dt-color-white);
+  padding: 60px 80px;
+}
+
+.reveal .slides section.section-content.present {
+  display: flex !important;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Dark overlay for readability */
+.reveal section.section-content::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(26, 36, 64, 0.88) 0%,
+    rgba(26, 36, 64, 0.72) 60%,
+    rgba(26, 36, 64, 0.55) 100%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+.reveal section.section-content::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 6px;
+  background: linear-gradient(90deg,
+    var(--dt-accent1) 0%, var(--dt-accent2) 20%, var(--dt-accent3) 40%,
+    var(--dt-accent4) 60%, var(--dt-accent5) 80%, var(--dt-accent6) 100%
+  );
+  z-index: 2;
+}
+
+.reveal section.section-content h1,
+.reveal section.section-content h2,
+.reveal section.section-content p,
+.reveal section.section-content ul,
+.reveal section.section-content ol,
+.reveal section.section-content .section__number {
+  position: relative;
+  z-index: 1;
+}
+
+.reveal section.section-content h1 {
+  color: var(--dt-color-white);
+  font-size: 56px;
+  margin-bottom: 16px;
+}
+
+.reveal section.section-content p,
+.reveal section.section-content li {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 28px;
+}
+
+/* ------------------------------------------------------------
+   TITLE LEFT
+   ------------------------------------------------------------ */
+.reveal .slides section.title-left {
+  background-color: var(--dt-color-bg-light);
+  color: var(--dt-color-text-dark);
+  background-image:
+    url('../assets/images/dt-logo-color-horizontal.svg'),
+    url('../assets/backgrounds/gradient-bar.png');
+  background-repeat: no-repeat, no-repeat;
+  background-position: left 80px bottom 20px, bottom center;
+  background-size: 140px auto, 100% 4px;
+}
+
+.reveal .slides section.title-left.present {
+  display: flex !important;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.reveal section.title-left h1 {
+  font-size: 64px;
+  color: var(--dt-color-text-dark);
+  max-width: 75%;
+}
+
+.reveal section.title-left p {
+  font-size: 28px;
+  color: var(--dt-color-text-muted);
+}
+
+/* ------------------------------------------------------------
+   TITLE MIDDLE ALIGNED LEFT / RIGHT
+   ------------------------------------------------------------ */
+.reveal .slides section.title-middle-left,
+.reveal .slides section.title-middle-right {
+  background-color: var(--dt-color-bg-light);
+  color: var(--dt-color-text-dark);
+  background-image:
+    url('../assets/images/dt-logo-color-horizontal.svg'),
+    url('../assets/backgrounds/gradient-bar.png');
+  background-repeat: no-repeat, no-repeat;
+  background-position: left 80px bottom 20px, bottom center;
+  background-size: 140px auto, 100% 4px;
+}
+
+.reveal .slides section.title-middle-left.present,
+.reveal .slides section.title-middle-right.present {
+  display: flex !important;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.reveal .slides section.title-middle-right {
+  text-align: right;
+}
+
+.reveal section.title-middle-left h1,
+.reveal section.title-middle-right h1 {
+  font-size: 56px;
+  color: var(--dt-color-text-dark);
+}
+
+.reveal section.title-middle-left p,
+.reveal section.title-middle-right p {
+  font-size: 26px;
+  color: var(--dt-color-text-muted);
+}
+
+/* ------------------------------------------------------------
+   EYEBROW LAYOUT (small label above title)
+   ------------------------------------------------------------ */
+.reveal .slides section.eyebrow {
+  background-color: var(--dt-color-bg-light);
+  color: var(--dt-color-text-dark);
+  background-image:
+    url('../assets/images/dt-logo-color-horizontal.svg'),
+    url('../assets/backgrounds/gradient-bar.png');
+  background-repeat: no-repeat, no-repeat;
+  background-position: left 80px bottom 20px, bottom center;
+  background-size: 140px auto, 100% 4px;
+}
+
+/* ------------------------------------------------------------
+   COVER WITH SPEAKER(S)
+   ------------------------------------------------------------ */
+.reveal .slides section.cover-speaker {
+  background-color: var(--dt-dark2);
+  background-image: url('../assets/backgrounds/cover-gradient-bg.png');
+  background-size: cover;
+  background-position: center;
+  color: var(--dt-color-text-light);
+  padding: 100px 80px 80px;
+}
+
+.reveal .slides section.cover-speaker.present {
+  display: flex !important;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.reveal section.cover-speaker h1 {
+  color: var(--dt-color-white);
+  font-size: 64px;
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+
+.reveal section.cover-speaker h2 {
+  color: var(--dt-color-white);
+  font-size: 32px;
+  font-weight: 300;
+  opacity: 0.85;
+}
+
+.reveal section.cover-speaker .speakers {
+  display: flex;
+  gap: 40px;
+  margin-top: 32px;
+}
+
+.reveal section.cover-speaker .speaker {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.reveal section.cover-speaker .speaker img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.reveal section.cover-speaker .speaker__info {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 22px;
+}
+
+/* ------------------------------------------------------------
+   CUSTOMER STORY
+   ------------------------------------------------------------ */
+.reveal .slides section.customer-story {
+  background-color: var(--dt-color-bg-light);
+  color: var(--dt-color-text-dark);
+  background-image:
+    url('../assets/images/dt-logo-color-horizontal.svg'),
+    url('../assets/backgrounds/gradient-bar.png');
+  background-repeat: no-repeat, no-repeat;
+  background-position: left 80px bottom 20px, bottom center;
+  background-size: 140px auto, 100% 4px;
+}
+
+.reveal section.customer-story .customer-story__quote {
+  font-size: 32px;
+  font-style: italic;
+  color: var(--dt-color-text-dark);
+  border-left: 4px solid var(--dt-accent3);
+  padding-left: 24px;
+  margin: 24px 0;
+}
+
+.reveal section.customer-story .customer-story__logo img {
+  max-height: 60px;
+  margin-bottom: 16px;
+}
+
+/* ------------------------------------------------------------
+   HERO IMAGE + CARDS
+   ------------------------------------------------------------ */
+.reveal .slides section.hero-cards {
+  background-color: var(--dt-color-bg-light);
+  color: var(--dt-color-text-dark);
+  padding: 0;
+}
+
+.reveal .slides section.hero-cards.present {
+  display: flex !important;
+  flex-direction: column;
+}
+
+.reveal section.hero-cards .hero-cards__image {
+  height: 55%;
+  overflow: hidden;
+}
+
+.reveal section.hero-cards .hero-cards__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.reveal section.hero-cards .hero-cards__grid {
+  display: flex;
+  gap: 24px;
+  padding: 24px 80px;
+  flex: 1;
+}
+
+.reveal section.hero-cards .hero-card {
+  flex: 1;
+  background: var(--dt-color-bg-light);
+  border: 1px solid #E0E4EB;
+  border-radius: 8px;
+  padding: 24px;
+}
+
+.reveal section.hero-cards .hero-card h3 {
+  font-size: 26px;
+  margin-bottom: 8px;
+}
+
+.reveal section.hero-cards .hero-card p {
+  font-size: 22px;
+  color: var(--dt-color-text-muted);
+}
+
+/* ------------------------------------------------------------
+   MENU / NAVIGATION
+   ------------------------------------------------------------ */
+.reveal .slides section.menu {
+  background-color: var(--dt-dark2);
+  background-image: none;
+  color: var(--dt-color-white);
+}
+
+.reveal .slides section.menu.present {
+  display: flex !important;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.reveal section.menu h2 {
+  color: var(--dt-color-white);
+  margin-bottom: 24px;
+}
+
+.reveal section.menu .menu__grid {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.reveal section.menu .menu__item {
+  flex: 1;
+  min-width: 250px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 28px 24px;
+  text-align: center;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.reveal section.menu .menu__item:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.reveal section.menu .menu__item h3 {
+  font-size: 28px;
+  color: var(--dt-color-white);
+  margin-bottom: 8px;
+}
+
+.reveal section.menu .menu__item p {
+  font-size: 22px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* ------------------------------------------------------------
+   ICON CARDS
+   ------------------------------------------------------------ */
+.reveal .slides section.icon-cards {
+  background-color: var(--dt-color-bg-light);
+  color: var(--dt-color-text-dark);
+  background-image:
+    url('../assets/images/dt-logo-color-horizontal.svg'),
+    url('../assets/backgrounds/gradient-bar.png');
+  background-repeat: no-repeat, no-repeat;
+  background-position: left 80px bottom 20px, bottom center;
+  background-size: 140px auto, 100% 4px;
+}
+
+.reveal section.icon-cards .icon-cards__grid {
+  display: flex;
+  gap: 32px;
+  flex-wrap: wrap;
+  margin-top: 16px;
+}
+
+.reveal section.icon-cards .icon-card {
+  flex: 1;
+  min-width: 200px;
+  text-align: center;
+  padding: 24px;
+}
+
+.reveal section.icon-cards .icon-card img {
+  height: 64px;
+  margin-bottom: 16px;
+}
+
+.reveal section.icon-cards .icon-card h3 {
+  font-size: 26px;
+  margin-bottom: 8px;
+}
+
+.reveal section.icon-cards .icon-card p {
+  font-size: 22px;
+  color: var(--dt-color-text-muted);
+}
+
+/* ------------------------------------------------------------
+   IMAGES GRID (2–8 images)
+   ------------------------------------------------------------ */
+.reveal .slides section.images {
+  background-color: var(--dt-color-bg-light);
+  color: var(--dt-color-text-dark);
+  padding: 60px 80px;
+}
+
+.reveal section.images .images__grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.reveal section.images .images__grid img {
+  flex: 1 1 calc(50% - 16px);
+  max-width: calc(50% - 8px);
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.reveal section.images .images__grid.images--3col img {
+  flex: 1 1 calc(33.33% - 16px);
+  max-width: calc(33.33% - 16px);
+}
+
+.reveal section.images .images__grid.images--4col img {
+  flex: 1 1 calc(25% - 16px);
+  max-width: calc(25% - 16px);
+}
+
+/* ------------------------------------------------------------
+   TEXT MULTI-COLUMN (2, 3, 4 columns)
+   ------------------------------------------------------------ */
+.reveal .slides section.text-2col,
+.reveal .slides section.text-3col,
+.reveal .slides section.text-4col {
+  background-color: var(--dt-color-bg-light);
+  color: var(--dt-color-text-dark);
+  background-image:
+    url('../assets/images/dt-logo-color-horizontal.svg'),
+    url('../assets/backgrounds/gradient-bar.png');
+  background-repeat: no-repeat, no-repeat;
+  background-position: left 80px bottom 20px, bottom center;
+  background-size: 140px auto, 100% 4px;
+}
+
+.reveal section.text-2col .columns,
+.reveal section.text-3col .columns,
+.reveal section.text-4col .columns {
+  display: flex;
+  gap: 40px;
+  width: 100%;
+}
+
+.reveal section.text-2col .col,
+.reveal section.text-3col .col,
+.reveal section.text-4col .col {
+  flex: 1;
+  min-width: 0;
+}

@@ -34,12 +34,12 @@ Apply Dynatrace visual identity — colours, typography, layouts, and content ru
 
 ## Source Templates
 
-Two presentation templates live in `input-sources/inbox/`:
+Two presentation templates live in the skill's `templates/` folder:
 
 | Template | Format | Path |
 |----------|--------|------|
-| Marpit/Marp | Markdown slides | `input-sources/inbox/dynatrace-marpit-template-v1.0.0/` |
-| reveal.js | HTML slides | `input-sources/inbox/dynatrace-revealjs-template-v1.0.0/` |
+| Marpit/Marp | Markdown slides | `templates/marpit/` |
+| reveal.js | HTML slides | `templates/revealjs/` |
 
 Both share identical design tokens, fonts, backgrounds, and logos. They differ only in implementation (Markdown vs HTML).
 
@@ -141,7 +141,7 @@ Once answers are collected, proceed to the matching procedure below.
 6. Follow [content guidelines](./references/content-guidelines.md) for text density and formatting rules.
 7. **Ensure asset paths resolve.** The CSS uses `url('theme/assets/...')` paths relative to the markdown file's location (not the CSS file). A `theme/` folder with `assets/fonts/`, `assets/backgrounds/`, and `assets/images/` must be accessible from the directory where the `.md` file lives. Use a symlink if the `.md` file is outside the template folder:
    ```bash
-   ln -sf /path/to/dynatrace-marpit-template-v1.0.0/theme ./theme
+   ln -sf /path/to/.github/skills/dt-branded-presentation/templates/marpit/theme ./theme
    ```
 8. Export with Marp CLI:
    ```bash
@@ -150,7 +150,7 @@ Once answers are collected, proceed to the matching procedure below.
 
 ### Create a reveal.js Presentation
 
-1. Copy `input-sources/inbox/dynatrace-revealjs-template-v1.0.0/index.html` as starting point.
+1. Copy `templates/revealjs/index.html` as starting point.
 2. Each `<section class="layout-name">` is one slide.
 3. Follow the same structure: cover → agenda → sections → closing.
 4. Consult the [slide layouts reference](./references/slide-layouts.md) for CSS classes and HTML structure.
