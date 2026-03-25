@@ -1,32 +1,45 @@
 # Workshop Materials — Juno Feedback Digest
 
-Everything in this folder is designed to be **printed and taken home** (or saved as a PDF) after the workshop. Use these as quick references when applying what you learned to your own projects.
+This workshop is **self-paced**. The checklist is your guide — work through it at your own pace, pausing at instructor checkpoints.
+
+---
+
+## Start Here
+
+**Open [`checklist.md`](./checklist.md)** — it walks you through everything from cloning the repo to opening a pull request.
 
 ---
 
 ## Presentation
 
-**[View the slides in your browser](https://michaelbinz.github.io/juno-feedback-digest/ai-first-workshop.html)** — no download needed.
+**[View the slides in your browser](https://michaelbinz.github.io/juno-feedback-digest/ai-first-workshop.html)** — used by the instructor for the introduction and checkpoint demos.
 
 > Presentation source files live in [`slides/`](./slides/) and are not intended for direct browsing.
 
 ---
 
-## Contents
+## Supporting Materials
 
 | File | What It Is |
 |------|-----------|
-| [`checklist.md`](./checklist.md) | Everything you learned today, with links to go deeper |
-| [`copilot-prompt-cheatsheet.md`](./copilot-prompt-cheatsheet.md) | Copy-paste Copilot prompts you can use right now |
-| [`glossary.md`](./glossary.md) | Plain-English definitions of every tool and concept |
-| [`whats-next.md`](./whats-next.md) | Your learning path and how to bring this to your team |
+| [`checklist.md`](./checklist.md) | **Your main guide** — self-paced phases with tasks and checkpoint markers |
+| [`copilot-prompt-cheatsheet.md`](./copilot-prompt-cheatsheet.md) | Copy-paste Copilot prompts for every workshop task |
+| [`glossary.md`](./glossary.md) | Plain-English definitions of Dynatrace-specific terms |
 
 ---
 
-## How to Use These Materials
+## How It Works
 
-**During the workshop:** Keep `copilot-prompt-cheatsheet.md` open — it has the prompts you need for every task.
+1. **Instructor intro** — slides cover the key ideas and explain the workshop flow
+2. **Phase 1** — you clone the repo, open Copilot Chat, and start a task
+3. **Checkpoint A** — instructor demos MCP, then you install it and continue
+4. **Phase 2** — you explore MCP and Copilot Skills while working on your task
+5. **Checkpoint B** — instructor demos the Git/PR workflow, then you ship your work
+6. **Phase 3** — you create a branch, commit, push, and open a pull request
+7. **Wrap-up** — recap and resources for continuing on your own
 
-**After the workshop:** Start with `whats-next.md` to plan your first real-project experiment. Use `glossary.md` when a term comes up that you're not sure about.
+---
 
-**Sharing with your team:** These materials are written to be self-contained. You can share any of these files with colleagues who didn't attend.
+## Sharing with Your Team
+
+These materials are self-contained. Anyone can follow the checklist independently — the instructor checkpoints are optional for async use.
