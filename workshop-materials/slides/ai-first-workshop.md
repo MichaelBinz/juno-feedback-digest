@@ -256,3 +256,14 @@ You can do this on your next project. **Today.**
 # Thank You
 
 Questions?
+
+---
+
+<!-- _class: content -->
+# Workshop Survey
+
+We'd love your feedback!
+
+![QR](https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://forms.office.com/Pages/ResponsePage.aspx?id=o-PrcDBbXUOdZ3cW10yhkI7MPH5ym5RIqCG-nh3SNVJUMlFKUUg1QU1FTU9TOTZIWkJHRjIwNExFQS4u)
+
+[**Take the survey →**](https://forms.office.com/Pages/ResponsePage.aspx?id=o-PrcDBbXUOdZ3cW10yhkI7MPH5ym5RIqCG-nh3SNVJUMlFKUUg1QU1FTU9TOTZIWkJHRjIwNExFQS4u)
