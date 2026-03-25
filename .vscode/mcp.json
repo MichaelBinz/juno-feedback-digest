@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "juno": {
+      "command": "npx",
+      "args": ["-y", "@dynatrace/juno-mcp@latest"],
+      "env": {}
+    }
+  }
+}
