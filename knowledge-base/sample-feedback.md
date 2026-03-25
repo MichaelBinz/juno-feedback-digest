@@ -38,7 +38,7 @@ Use this data for feedback analysis tasks — ask Copilot to identify themes, su
 
 **[Entry 5]**  
 *Source: Slack / #help-juno*  
-> "Scaffolder templates are a game-changer. Created a new service in 8 minutes with all the standard configs pre-applied. First time I've actually enjoyed service setup."
+> "Juno Templates are a game-changer. Created a new service in 8 minutes with all the standard configs pre-applied. First time I've actually enjoyed service setup."
 
 ---
 
@@ -92,7 +92,7 @@ Use this data for feedback analysis tasks — ask Copilot to identify themes, su
 
 **[Entry 14]**  
 *Source: Slack / #platform*  
-> "The new Scaffolder template for Python services is missing the observability config. New services go live without dashboards. Can we add OTel setup to the template?"
+> "The new Juno Template for Python services is missing the observability config. New services go live without dashboards. Can we add OTel setup to the template?"
 
 ---
 
@@ -150,7 +150,7 @@ Use this data for feedback analysis tasks — ask Copilot to identify themes, su
 
 **[Entry 23]**  
 *Source: Support ticket #4918*  
-> "Scaffolder template fails on step 3 (GitHub repo creation) when the engineer's GitHub handle contains a hyphen. Error: `Invalid identifier`. Affects ~10 engineers. Status: fix in review."
+> "The Juno Template fails on step 3 (GitHub repo creation) when the engineer's GitHub handle contains a hyphen. Error: `Invalid identifier`. Affects ~10 engineers. Status: fix in review."
 
 ---
 
@@ -168,7 +168,7 @@ Use this data for feedback analysis tasks — ask Copilot to identify themes, su
 
 **[Entry 25]**  
 *NPS: 9 / Source: Q2 Pulse Survey*  
-> "Juno has genuinely changed how my team works. The catalog, TechDocs, and Scaffolder together cover 80% of what we used to do manually. Would love better search and a mobile-friendly view."
+> "Juno has genuinely changed how my team works. The catalog, TechDocs, and Templates together cover 80% of what we used to do manually. Would love better search and a mobile-friendly view."
 
 ---
 
@@ -198,4 +198,4 @@ Use this data for feedback analysis tasks — ask Copilot to identify themes, su
 
 **[Entry 30]**  
 *NPS: 6 / Source: Q2 Pulse Survey*  
-> "The Scaffolder templates save real time but they're inconsistent across teams. Some templates are well-maintained, others are clearly out of date. A 'last updated' indicator on templates would help me know which ones to trust."
+> "The Juno Templates save real time but they're inconsistent across teams. Some templates are well-maintained, others are clearly out of date. A 'last updated' indicator on templates would help me know which ones to trust."

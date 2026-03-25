@@ -22,8 +22,6 @@ This repo mirrors real Juno product development work. It offers:
 juno-feedback-digest/
 ├── .github/
 │   └── copilot-instructions.md     # Project-level context and rules for Copilot
-├── .vscode/
-│   └── mcp.json                    # Pre-configured Juno MCP connections
 ├── docs/
 │   ├── prd-draft.md                # Incomplete PRD — ready for your contribution
 │   ├── user-research-template.md   # Empty research template
@@ -32,8 +30,6 @@ juno-feedback-digest/
 │   ├── project-context.md          # What this project is and why it matters
 │   ├── personas.md                 # 3 defined user personas
 │   └── sample-feedback.md          # 30 fictional feedback entries
-├── skill/
-│   └── SKILL.md                    # Example Copilot Skill definition
 ├── CONTRIBUTING.md                 # Step-by-step Git workflow guide
 └── README.md                       # You are here
 ```
