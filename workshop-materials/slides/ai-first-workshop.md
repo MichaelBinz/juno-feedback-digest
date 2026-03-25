@@ -13,20 +13,39 @@ Juno DevRel · Dynatrace R&D
 
 ---
 
-<!-- _class: agenda -->
+<!-- _class: content -->
 # How Today Works
+
+This is a **self-paced workshop**. You work through a checklist at your own speed — we regroup at two short checkpoints.
 
 | | Block | Format |
 |---|-------|--------|
-| 1 | Introduction | Instructor-led |
-| 2 | **Phase 1 — Get Started** | Self-paced |
-| 3 | Checkpoint A — MCP Demo | Instructor-led |
-| 4 | **Phase 2 — Level Up** | Self-paced |
-| 5 | Checkpoint B — Git & PR Demo | Instructor-led |
-| 6 | **Phase 3 — Ship It** | Self-paced |
-| 7 | Wrap-up | Instructor-led |
+| | Prerequisites | Pre-check |
+| 1 | **Phase 1 — Get Started** | Self-paced |
+| | 🔔 Checkpoint A — MCP Demo | Instructor-led |
+| 2 | **Phase 2 — Level Up with MCP & Skills** | Self-paced |
+| | 🔔 Checkpoint B — Git & PR Demo | Instructor-led |
+| 3 | **Phase 3 — Ship It** | Self-paced |
+| | Bonus — Go Deeper | Self-paced |
 
-Your guide: **`workshop-materials/checklist.md`**
+Your guide: **`workshop-materials/checklist.md`** — open it now.
+
+---
+
+<!-- _class: content -->
+# Prerequisites
+
+*Confirm these before we start. If anything is missing, ask a facilitator.*
+
+- [ ] GitHub account with `@dynatrace.com` email as primary
+- [ ] 2FA enabled on GitHub
+- [ ] Member of the **`Dynatrace-CoPilot`** GitHub organisation
+- [ ] **GitHub Copilot Business** licence active — [verify here](https://github.com/settings/copilot/features)
+- [ ] **VS Code** installed with the **GitHub Copilot** extension
+
+&nbsp;
+
+All good? Let's go.
 
 ---
 
@@ -77,16 +96,58 @@ You'll see this in action in Phase 1.
 ---
 
 <!-- _class: section -->
-# ▶ Open `checklist.md` — Start Phase 1
+# Phase 1 — Get Started
 
-*Clone the repo, open Copilot Chat, pick a task, and start working.*
+*Goal: get hands-on with Copilot as fast as possible.*
 
-Facilitators are here if you get stuck.
+---
+
+<!-- _class: content -->
+# Phase 1 — Steps
+
+### 1. Clone and open the repo
+
+```bash
+git clone https://github.com/MichaelBinz/juno-feedback-digest.git
+```
+
+Open in VS Code: **File → Open Folder → select `juno-feedback-digest`**
+
+### 2. Meet Copilot Chat
+
+Open Copilot Chat (`Cmd+Shift+I`) and try this warm-up prompt:
+
+```
+Read knowledge-base/project-context.md and summarise it in 5 bullets.
+```
+
+### 3. Understand `copilot-instructions.md`
+
+Open `.github/copilot-instructions.md` — this is **why Copilot gives project-specific answers**.
+
+---
+
+<!-- _class: content -->
+# Phase 1 — Pick a Task
+
+Choose **one task** and work on it using Copilot Chat. Save your output to a file in the repo.
+
+| Task | Example Prompt |
+|------|----------------|
+| **Complete the PRD** | *"Read docs/prd-draft.md and write the missing Success Metrics section"* |
+| **Analyse the feedback** | *"Read knowledge-base/sample-feedback.md and summarise the top 3 themes with quotes and suggested actions"* |
+| **Write user stories** | *"Read knowledge-base/personas.md and write 3 user stories for the Platform Lead"* |
+| **Sketch the architecture** | *"Read the PRD and project context, then fill in docs/architecture-sketch.md"* |
+| **Draft a launch announcement** | *"Draft a Slack announcement for #drs-all introducing the Juno Feedback Digest"* |
+
+📖 More prompts: `workshop-materials/copilot-prompt-cheatsheet.md`
 
 ---
 
 <!-- _class: section -->
-# 🔔 Checkpoint A — MCP
+# 🔔 Checkpoint A — MCP Demo
+
+**Pause here.** Eyes up — quick demo before you continue.
 
 ---
 
@@ -118,48 +179,102 @@ Watch Copilot:
 2. Call the Juno MCP server
 3. Return a real answer from the Software Catalog
 
-&nbsp;
+---
 
-**Now continue with Phase 2 on your checklist** — install the Knowledge Base extension and try it yourself.
+<!-- _class: section -->
+# Phase 2 — Level Up with MCP & Skills
+
+*Goal: connect Copilot to external data sources and explore advanced capabilities.*
+
+---
+
+<!-- _class: content -->
+# Phase 2 — Steps
+
+### 1. Install the R&D AI Knowledge Base
+
+- Open VS Code Settings (`Cmd+,`)
+- Search for `chat.plugins.marketplaces`
+- Click **Add Item** and add: `Dynatrace-Internal/rnd-ai-knowledgebase`
+
+### 2. Install the Juno MCP server
+
+- Open Extensions (`Cmd+Shift+X`) → search **Juno MCP** → Install
+
+### 3. Try an MCP query
+
+```
+Who owns the auth service?
+```
+
+### 4. Explore Copilot Skills
+
+- **`dt-github`** — ask Copilot to list open issues in this repo
+- **`dt-skill-creator`** — ask Copilot to evaluate a skill or draft a new one
+
+### 5. Continue your task from Phase 1
 
 ---
 
 <!-- _class: section -->
-# 🔔 Checkpoint B — Git & PRs
+# 🔔 Checkpoint B — Git & PR Demo
+
+**Pause here.** Quick regroup — let me show you the finish line.
 
 ---
 
 <!-- _class: content -->
-# The Git Workflow
+# The GitHub Workflow
+
+![w:900 center](github-workflow.svg)
+
+---
+
+<!-- _class: section -->
+# Phase 3 — Ship It
+
+*Goal: commit your work and open a pull request.*
+
+---
+
+<!-- _class: content -->
+# Phase 3 — Steps
+
+### 1. Create a branch and push
 
 ```bash
 git checkout -b workshop/your-name
-# ... do your task ...
 git add .
-git commit -m "Add [task] — workshop contribution"
+git commit -m "Add [your task] — workshop contribution"
 git push -u origin workshop/your-name
-# click the link → open PR on GitHub
 ```
 
-`workshop/*` branches are unprotected — push freely.
-`main` is protected — changes go through PRs only.
+### 2. Open a Pull Request
+
+Go to the repo on GitHub → click **"Compare & pull request"** → add a title and description → **"Create pull request"**
+
+&nbsp;
+
+**Or use Copilot:**
+
+```
+Create a pull request with all my changes.
+```
+
+📖 Full Git guide: `CONTRIBUTING.md`
 
 ---
 
 <!-- _class: content -->
-# What "Done" Looks Like
+# Bonus — Go Deeper
 
-A pull request on GitHub with your workshop contribution:
+*Finished early? Try these stretch goals:*
 
-- Clear title: *"Add feedback analysis — workshop contribution"*
-- Short description of what you did
-- Your changed/new files visible in the diff
-
-**Cheat mode:** The `dt-github` skill can create the PR from Copilot Chat.
-
-&nbsp;
-
-**Now continue with Phase 3 on your checklist** — create your branch, commit, push, and open a PR.
+- Write a `copilot-instructions.md` for one of your own projects
+- Use `dt-skill-creator` to design a new Copilot Skill
+- Browse the Juno Portal at `juno.internal.dynatrace.com`
+- Explore the Software Catalog — find your team's services
+- Ask Copilot to explain a concept from the glossary in your own words
 
 ---
 
@@ -176,9 +291,10 @@ This is bigger than one workshop.
 **AI-First means:**
 
 - Structuring your work so AI can participate meaningfully
-- Writing `copilot-instructions.md` **before** you start coding
 - Building a knowledge base, not just a codebase
-- Treating Copilot as a collaborator, not a search engine
+- Treating AI as a collaborator, not a search engine
+
+GitHub Copilot, Claude Code, Cursor — these are just tools. The specific features will change, but the core principles stay the same: **context, structure, and intent**.
 
 &nbsp;
 
@@ -196,6 +312,21 @@ You can do this on your next project. **Today.**
 | Copilot Community | `#github-copilot-community-of-practice` on Slack |
 | Help with Juno | `#help-juno` on Slack |
 | This repo | `github.com/MichaelBinz/juno-feedback-digest` |
+
+---
+
+<!-- _class: content -->
+# What I Learned Today
+
+*Self-check — do you understand these?*
+
+- [ ] Copilot's quality depends on the **context** it's given
+- [ ] `copilot-instructions.md` gives Copilot project-level context automatically
+- [ ] **MCP** lets Copilot query external systems (Software Catalog, etc.)
+- [ ] **Copilot Skills** are reusable instruction packages from the Knowledge Base
+- [ ] I can use Copilot for non-code tasks: PRDs, analysis, announcements, architecture
+- [ ] I know how to create a branch, commit, push, and open a PR
+- [ ] I know where to get help: `#github-copilot-community-of-practice` and `#help-juno`
 
 ---
 

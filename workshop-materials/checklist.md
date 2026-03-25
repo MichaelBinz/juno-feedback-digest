@@ -2,7 +2,7 @@
 
 This is your guide for the workshop. Work through it at your own pace — the instructor will call out checkpoints when it's time to regroup.
 
-> **How it works:** Complete each phase in order. When you hit a 🔔 **Checkpoint**, pause and wait for the instructor demo. Then continue with the next phase.
+> **How it works:** Complete each phase in order. When you hit a 🔔 **Checkpoint**, the instructor will do a short demo. You **don't have to wait** if you're ahead. Feel free to keep going or wait for the instructor.
 
 ---
 
@@ -66,7 +66,7 @@ Choose **one task** from the table below and work on it using Copilot Chat. Save
 
 ## 🔔 Checkpoint A — MCP Demo
 
-**Pause here.** The instructor will demonstrate the Model Context Protocol (MCP) and how Copilot can query external systems like the Juno Software Catalog.
+The instructor will demonstrate the Model Context Protocol (MCP) and how Copilot can query external systems like the Juno Software Catalog.
 
 ---
 
@@ -121,7 +121,7 @@ Skills are portable instruction packages from the Knowledge Base. Two to try:
 
 ## 🔔 Checkpoint B — Git & PR Demo
 
-**Pause here.** The instructor will walk through the Git workflow and show what a completed pull request looks like.
+The instructor will walk through the Git workflow and show what a completed pull request looks like.
 
 ---
 

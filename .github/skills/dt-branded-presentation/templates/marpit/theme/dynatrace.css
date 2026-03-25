@@ -169,14 +169,13 @@ section {
   overflow: hidden;
   position: relative;
 
-  /* White bg + coloured logo (bottom-left) + gradient bar (bottom edge) */
+  /* White bg + coloured logo (bottom-left) */
   background-color: var(--dt-color-bg-light);
   background-image:
-    url('theme/assets/images/dt-logo-color-horizontal.svg'),
-    url('theme/assets/backgrounds/gradient-bar.png');
-  background-repeat: no-repeat, no-repeat;
-  background-position: left 2.5em bottom 0.667em, bottom center;
-  background-size: 5em auto, 100% 0.167em;
+    url('theme/assets/images/dt-logo-color-horizontal.svg');
+  background-repeat: no-repeat;
+  background-position: left 2.5em bottom 0.667em;
+  background-size: 5em auto;
 }
 
 h1 {
@@ -593,25 +592,9 @@ section.section {
   position: relative;
 }
 
-/* Rainbow gradient accent bar at top – scales with font-size */
+/* Rainbow gradient accent bar at top – disabled */
 section.section::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 0.25em;           /* 6px at base; scales with section font-size */
-  padding: 0;
-  background: linear-gradient(90deg,
-    var(--dt-accent1) 0%,
-    var(--dt-accent2) 20%,
-    var(--dt-accent3) 40%,
-    var(--dt-accent4) 60%,
-    var(--dt-accent5) 80%,
-    var(--dt-accent6) 100%
-  );
-  z-index: 1;
-  pointer-events: none;
+  display: none;
 }
 
 /* No pagination on section divider slides */
@@ -657,25 +640,9 @@ section.section-content {
   position: relative;
 }
 
-/* Rainbow gradient accent bar at top */
+/* Rainbow gradient accent bar at top — disabled */
 section.section-content::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 0.25em;           /* 6px at base; scales with section font-size */
-  padding: 0;
-  background: linear-gradient(90deg,
-    var(--dt-accent1) 0%,
-    var(--dt-accent2) 20%,
-    var(--dt-accent3) 40%,
-    var(--dt-accent4) 60%,
-    var(--dt-accent5) 80%,
-    var(--dt-accent6) 100%
-  );
-  z-index: 1;
-  pointer-events: none;
+  display: none;
 }
 
 /* No pagination on section-content divider slides */

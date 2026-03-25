@@ -8,25 +8,26 @@
 
 | Block | Slides | Duration | Format |
 |-------|--------|----------|--------|
-| Introduction | 1–6 | ~10 min | Instructor-led |
-| Phase 1 — Get Started | — | ~15 min | Self-paced |
-| Checkpoint A — MCP Demo | 7–9 | ~5 min | Instructor-led |
-| Phase 2 — Level Up | — | ~10 min | Self-paced |
-| Checkpoint B — Git & PR Demo | 10–12 | ~5 min | Instructor-led |
-| Phase 3 — Ship It | — | ~10 min | Self-paced |
-| Wrap-up | 13–16 | ~5 min | Instructor-led |
+| Introduction | 1–7 | ~10 min | Instructor-led |
+| Phase 1 — Get Started | 8–10 | ~15 min | Self-paced |
+| Checkpoint A — MCP Demo | 11–13 | ~5 min | Instructor-led |
+| Phase 2 — Level Up | 14–15 | ~10 min | Self-paced |
+| Checkpoint B — Git & PR Demo | 16–18 | ~5 min | Instructor-led |
+| Phase 3 — Ship It | 19–20 | ~10 min | Self-paced |
+| Bonus & Wrap-up | 21–27 | ~5 min | Mixed |
 
 ---
 
-## Introduction (slides 1–6)
+## Introduction (slides 1–7)
 
 **What to say:**
 - "60 minutes, one goal: open a real PR using Copilot."
 - Explain the 3-phase self-paced flow — point to the table on slide 2.
+- Walk through the prerequisites slide — make sure everyone is set up before we start.
 - Walk through the "Copilot is only as good as the context" quote — this is the key takeaway.
 - Briefly introduce the Juno Feedback Digest as the learning vehicle.
-- Show the repo structure on slide 5 — highlight `knowledge-base/` and `.github/copilot-instructions.md`.
-- End with: **"Open `workshop-materials/checklist.md` and start Phase 1. I'm here for questions."**
+- Show the repo structure on slide 7 — highlight `knowledge-base/` and `.github/copilot-instructions.md`.
+- End with: **"The Phase 1 slides show you exactly what to do. Your checklist has the details. Go."**
 
 **Common issues during Phase 1:**
 - Clone failures → check GitHub org membership and auth (VS Code credential manager or PAT)
@@ -35,7 +36,7 @@
 
 ---
 
-## Checkpoint A — MCP Demo (slides 7–9)
+## Checkpoint A — MCP Demo (slides 11–13)
 
 **When to trigger:** ~15 minutes in, or when most participants have finished their first Copilot interaction.
 
@@ -50,7 +51,7 @@
 
 **What to say after:**
 - "To try this yourself, you need the R&D AI Knowledge Base extension."
-- "Phase 2 on your checklist walks you through the install. Continue working."
+- "The Phase 2 slides show the steps. Your checklist has the details. Continue working."
 
 **Troubleshooting:**
 - MCP server not responding → reload VS Code, check extension is installed
@@ -58,7 +59,7 @@
 
 ---
 
-## Checkpoint B — Git & PR Demo (slides 10–12)
+## Checkpoint B — Git & PR Demo (slides 16–18)
 
 **When to trigger:** ~30 minutes in, or when most participants have saved work.
 
@@ -72,7 +73,7 @@
 5. Bonus: show the `dt-github` skill doing it from Chat
 
 **What to say after:**
-- "Phase 3 on your checklist has all the commands. Go open your PR."
+- "The Phase 3 slides have everything you need. Go open your PR."
 - "If you've never used Git, ask Copilot — it can walk you through every step."
 - "Remember: `workshop/*` branches are unprotected, so you can push freely."
 
@@ -83,7 +84,7 @@
 
 ---
 
-## Wrap-up (slides 13–16)
+## Wrap-up (slides 23–27)
 
 **What to say:**
 - Quick recap of the AI-First mindset — it's about context, not cleverness

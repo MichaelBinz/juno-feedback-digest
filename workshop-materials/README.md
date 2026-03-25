@@ -14,8 +14,6 @@ This workshop is **self-paced**. The checklist is your guide — work through it
 
 **[View the slides in your browser](https://michaelbinz.github.io/juno-feedback-digest/ai-first-workshop.html)** — used by the instructor for the introduction and checkpoint demos.
 
-> Presentation source files live in [`slides/`](./slides/) and are not intended for direct browsing.
-
 ---
 
 ## Supporting Materials
