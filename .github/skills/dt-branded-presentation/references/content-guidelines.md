@@ -19,7 +19,7 @@ Rules for on-brand Dynatrace presentations, standalone graphics, and animated vi
 
 - **Don't mix dark/light backgrounds** randomly — follow layout conventions
 - **Don't nest bullets more than 3 levels** deep
-- **Don't override brand colours** — only use the 10-colour palette
+- **Don't override brand colours** — only use the 11-colour palette
 - **Don't use fonts other than DTFlow** (or system monospace for code)
 - **Don't crowd slides** — whitespace is intentional in the Dynatrace brand
 - **Don't remove the gradient bar** — it's a core brand element on light slides
@@ -72,7 +72,7 @@ Standalone graphics (infographics, social cards, diagrams) can be denser than sl
 | Timeline / process flow | 4–8 steps maximum |
 
 **Do's for standalone graphics:**
-- Use the [standalone graphics boilerplate](./standalone-graphics.md) to ensure correct font embedding and CSS variables
+- Use the `dt-branded-graphics` skill's boilerplate to ensure correct font embedding and CSS variables
 - Include the gradient bar on light backgrounds — same as slides
 - Maintain generous padding (40–60px) even on smaller canvases
 - Use brand colours for all chart/diagram fills — accent1 through accent6 in order

@@ -1,6 +1,14 @@
 ---
 name: dt-branded-presentation
-description: "Dynatrace brand guidelines, design tokens, and slide deck creation with Marp or reveal.js. Use when: creating Marp or reveal.js presentations, choosing slide layouts, reviewing slides for brand compliance, looking up Dynatrace colours/fonts/design tokens, applying DTFlow typography, structuring presentation content. Do NOT use for creating standalone graphics, infographics, animations, or PNG exports — use dt-branded-graphics for those."
+description: >-
+  Dynatrace brand guidelines, design tokens, and slide deck creation with Marp or reveal.js.
+  Use when: creating or editing a Marp (.md) or reveal.js (.html) slide deck, applying the
+  Dynatrace slide template, choosing slide layouts, reviewing slides for brand compliance,
+  looking up --dt-* CSS variables or --r-* reveal.js variables, DTFlow font weights or sizes,
+  logo variants, or background assets. Also triggers for: "Dynatrace Marp template",
+  "DTFlow font", "brand colours", "slide layout", "design tokens", "slide compliance check".
+  Do NOT use for standalone graphics, infographics, animations, or PNG exports — use
+  dt-branded-graphics for those.
 ---
 
 # Dynatrace Branded Presentations
@@ -37,7 +45,7 @@ Both share identical design tokens, fonts, backgrounds, and logos. They differ o
 
 ## Quick Brand Summary
 
-### Colour Palette (10 colours)
+### Colour Palette (11 colours)
 
 | Role | Variable | Hex |
 |------|----------|-----|
@@ -45,6 +53,7 @@ Both share identical design tokens, fonts, backgrounds, and logos. They differ o
 | Navy (primary dark) | `--dt-dark2` | `#1A2440` |
 | White | `--dt-light1` | `#FFFFFF` |
 | Muted grey | `--dt-light2` | `#6F747F` |
+| Subtle grey | `--dt-color-subtle` | `#B0B5BD` |
 | Teal | `--dt-accent1` | `#49C2B3` |
 | Sky blue | `--dt-accent2` | `#3BACF0` |
 | Blue (primary brand) | `--dt-accent3` | `#1966FF` |
@@ -52,23 +61,45 @@ Both share identical design tokens, fonts, backgrounds, and logos. They differ o
 | Deep magenta | `--dt-accent5` | `#8D1CDC` |
 | Pink | `--dt-accent6` | `#C93FDB` |
 
-**Gradient bar:** `linear-gradient(90deg, accent1 → accent2 → accent3 → accent4 → accent5 → accent6)` — 4–6px tall, full-width, bottom of white slides.
+**Gradient bar:** `linear-gradient(90deg, accent1 → accent2 → accent3 → accent4 → accent5 → accent6)`
+- Bottom of white/light slides: 4–6px tall, full-width. Never remove.
+- Top of navy `section` divider slides: 6px tall, same gradient. Never remove from those either.
 
 ### Typography
 
-- **Headings:** DTFlow-Medium (500)
-- **Body:** DTFlow-Light (300)
-- **Bold emphasis:** DTFlow-Semibold (600)
-- **Metric values:** DTFlow-Bold (700)
-- **Section numbers:** DTFlow-Hairline (100)
+| Element | Weight | Typical Size |
+|---------|--------|--------------|
+| Slide title (H1) | DTFlow-Medium (500) | 44–56px |
+| Section title | DTFlow-Medium (500) | 56–72px |
+| Section number | DTFlow-Hairline (100) | 120–150px |
+| Subtitle (H2) | DTFlow-Medium (500) | 32–44px |
+| Body / Bullets | DTFlow-Light (300) | 24–30px |
+| Bold emphasis | DTFlow-Semibold (600) | (inherits) |
+| Metric values | DTFlow-Bold (700) | 48–72px |
+| Code blocks | System monospace (not DTFlow) | 20–22px |
+
+- **No all-caps headings** unless the layout explicitly uses them (e.g., eyebrow labels).
 
 ### Key Layout Rules
 
 - **Canvas:** 16:9 (1280×720 Marp, 1920×1080 reveal.js)
 - **Padding:** 50–100px top/bottom, 60–80px left/right
 - **Border radius:** 8px (cards, images, code blocks)
-- **Logo:** Bottom-left on white slides (140px wide), top-left on dark slides
-- **Gradient bar:** Never remove — it's a core brand element on light slides
+- **Logo:** Bottom-left on white slides (140px wide, colour variant); top-left on dark slides (140px wide, white variant via HTML `<img>` markup)
+- **Gradient bar (bottom):** Never remove — core brand element on white/light slides
+- **Gradient bar (top):** Never remove from navy `section` slides — same gradient, top edge
+
+### Colour Usage Quick Reference
+
+| Context | Token |
+|---------|-------|
+| Headings & body on white | `--dt-dark2` (#1A2440) |
+| Text on dark slides | `--dt-light1` (white) |
+| Links on dark slides | `--dt-accent2` (sky blue) |
+| Links on light slides | `--dt-accent3` (blue) |
+| Success / positive metric | `--dt-accent1` (teal) |
+| Primary brand accent | `--dt-accent3` (blue) |
+| Chart fills (in order) | accent1 → accent6 |
 
 ## Detailed References
 
@@ -114,7 +145,7 @@ Once answers are collected, proceed to the matching procedure below.
    ```
 8. Export with Marp CLI:
    ```bash
-   marp presentation.md --theme theme/dynatrace.css --html --allow-local-files -o output.html
+   marp presentation.md --theme theme/assets/dynatrace.css --html --allow-local-files -o output.html
    ```
 
 ### Create a reveal.js Presentation
@@ -191,5 +222,5 @@ done
 | **Wrong layout for markup** | Cards/metrics look broken on white bg, or bullets look wrong on navy | Each layout has paired CSS classes. `metric-card` → `metrics` layout. Bullets → `content` layout. Check the [layout selection guide](./references/slide-layouts.md). |
 | **Fonts not loading** | Text falls back to system font (Arial/Helvetica) | Marp resolves `url()` paths relative to the `.md` file, not the CSS. Ensure a `theme/assets/fonts/` folder is reachable from where the `.md` lives. Symlink if needed. |
 | **Missing backgrounds/logos** | No gradient bar, no logo, plain white/navy slides | Same path issue as fonts. The `theme/assets/backgrounds/` and `theme/assets/images/` folders must be accessible relative to the `.md` file. |
-| **Logo on dark slides** | Colour logo visible on navy background | Dark layouts (`section`, `metrics`, `cover`, `closing`) override `background-image: none`. If you see a logo on dark, you're using the wrong layout class. |
+| **Wrong logo variant on dark slides** | Colour or black logo on navy background instead of white | The white logo on dark slides is set via HTML `<img src="dt-logo-white-horizontal.svg">` markup — not CSS. If the wrong logo variant appears, fix the `src` in the markup. The `background-image: none` CSS override only suppresses the light-slide CSS logo; the dark-slide HTML logo is separate. |
 | **Skipping the brief** | Rework after delivering wrong format or size | Always run the [Understand the Brief](#understand-the-brief) procedure before production. |
