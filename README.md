@@ -16,6 +16,12 @@ This repo mirrors real Juno product development work. It offers:
 
 ---
 
+## Presentation
+
+**[View the workshop slides](https://michaelbinz.github.io/juno-feedback-digest/ai-first-workshop.html)** — opens directly in your browser.
+
+---
+
 ## Repository Structure
 
 ```
@@ -30,6 +36,12 @@ juno-feedback-digest/
 │   ├── project-context.md          # What this project is and why it matters
 │   ├── personas.md                 # 3 defined user personas
 │   └── sample-feedback.md          # 30 fictional feedback entries
+├── workshop-materials/
+│   ├── checklist.md                # Self-assessment and learning outcomes
+│   ├── copilot-prompt-cheatsheet.md # Copy-paste prompts for every task
+│   ├── glossary.md                 # Plain-English definitions of tools and concepts
+│   ├── whats-next.md               # Learning path after the workshop
+│   └── slides/                     # Presentation source, compiled HTML, and theme
 ├── CONTRIBUTING.md                 # Step-by-step Git workflow guide
 └── README.md                       # You are here
 ```

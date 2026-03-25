@@ -4,12 +4,19 @@ Everything in this folder is designed to be **printed and taken home** (or saved
 
 ---
 
+## Presentation
+
+**[View the slides in your browser](https://michaelbinz.github.io/juno-feedback-digest/ai-first-workshop.html)** — no download needed.
+
+> Presentation source files live in [`slides/`](./slides/) and are not intended for direct browsing.
+
+---
+
 ## Contents
 
 | File | What It Is |
 |------|-----------|
 | [`checklist.md`](./checklist.md) | Everything you learned today, with links to go deeper |
-| [`presentation-outline.md`](./presentation-outline.md) | Key concepts from the workshop slides |
 | [`copilot-prompt-cheatsheet.md`](./copilot-prompt-cheatsheet.md) | Copy-paste Copilot prompts you can use right now |
 | [`glossary.md`](./glossary.md) | Plain-English definitions of every tool and concept |
 | [`whats-next.md`](./whats-next.md) | Your learning path and how to bring this to your team |
