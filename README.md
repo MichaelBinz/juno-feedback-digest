@@ -40,7 +40,6 @@ juno-feedback-digest/
 │   ├── checklist.md                # Self-assessment and learning outcomes
 │   ├── copilot-prompt-cheatsheet.md # Copy-paste prompts for every task
 │   ├── glossary.md                 # Plain-English definitions of tools and concepts
-│   ├── whats-next.md               # Learning path after the workshop
 │   └── slides/                     # Presentation source, compiled HTML, and theme
 ├── CONTRIBUTING.md                 # Step-by-step Git workflow guide
 └── README.md                       # You are here
