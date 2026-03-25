@@ -29,19 +29,6 @@ Use this as a self-assessment and reference guide. Each item links to the resour
 
 ---
 
-### ✅ Structuring Context for Copilot
-
-- [ ] I know what **`copilot-instructions.md`** is and what it does
-  - Lives in `.github/copilot-instructions.md`
-  - Automatically read by Copilot on every conversation in VS Code
-  - Contains: project summary, key files, tone, constraints
-- [ ] I understand the difference between a project with good context and one without
-- [ ] I can write a `copilot-instructions.md` for my own project
-
-📖 Community: `#github-copilot-community-of-practice` on Slack
-
----
-
 ### ✅ Git & GitHub Workflow
 
 - [ ] I know how to clone a repo: `git clone <url>`
@@ -51,6 +38,8 @@ Use this as a self-assessment and reference guide. Each item links to the resour
 - [ ] I know how to push: `git push -u origin my-branch`
 - [ ] I've opened a **Pull Request** on GitHub
 - [ ] I understand branch protection (why `main` requires a PR)
+
+> **Cheat mode:** Ask Copilot to do it for you
 
 📖 Resource: [CONTRIBUTING.md](../CONTRIBUTING.md) in this repo  
 📖 Resource: [Git cheat sheet — GitHub](https://education.github.com/git-cheat-sheet-education.pdf)
@@ -69,6 +58,19 @@ Use this as a self-assessment and reference guide. Each item links to the resour
 ## Level 2 — Bonus
 
 *Going deeper: for those who want to explore the more advanced tooling.*
+
+---
+
+### ⭐ Structuring Context for Copilot
+
+- [ ] I know what **`copilot-instructions.md`** is and what it does
+  - Lives in `.github/copilot-instructions.md`
+  - Automatically read by Copilot on every conversation in VS Code
+  - Contains: project summary, key files, tone, constraints
+- [ ] I understand the difference between a project with good context and one without
+- [ ] I can write a `copilot-instructions.md` for my own project
+
+📖 Community: `#github-copilot-community-of-practice` on Slack
 
 ---
 
@@ -100,7 +102,7 @@ Use this as a self-assessment and reference guide. Each item links to the resour
 - [ ] I know where to find MCP servers for Dynatrace — the R&D AI Knowledge Base
 
 📖 Resource: `github.com/Dynatrace-Internal/rnd-ai-knowledgebase`
-📖 Resource: `#help-juno` on Slack for Juno MCP questions
+📖 Help: `#help-juno` on Slack for Juno MCP questions
 
 ---
 
@@ -130,4 +132,3 @@ Use this as a self-assessment and reference guide. Each item links to the resour
 | This Workshop Repo | `github.com/MichaelBinz/juno-feedback-digest` |
 | GitHub Copilot Docs | `docs.github.com/en/copilot` |
 | Git Cheat Sheet | `education.github.com/git-cheat-sheet-education.pdf` |
-| MCP Overview | `modelcontextprotocol.io` |
