@@ -16,9 +16,10 @@ This repo mirrors real Juno product development work. It offers:
 
 ---
 
-## Presentation
+## Workshop Materials
 
-**[View the workshop slides](https://michaelbinz.github.io/juno-feedback-digest/ai-first-workshop.html)** — opens directly in your browser.
+- **[Getting started with the Checklist](workshop-materials/checklist.md)**
+- **[View the workshop slides](https://michaelbinz.github.io/juno-feedback-digest/ai-first-workshop.html)** — opens directly in your browser.
 
 ---
 

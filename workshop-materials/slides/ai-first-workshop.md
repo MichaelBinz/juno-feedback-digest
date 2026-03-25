@@ -284,6 +284,21 @@ Create a pull request with all my changes.
 ---
 
 <!-- _class: content -->
+# What I Learned Today
+
+*Self-check — do you understand these?*
+
+- [ ] Copilot's quality depends on the **context** it's given
+- [ ] `copilot-instructions.md` gives Copilot project-level context automatically
+- [ ] **MCP** lets Copilot query external systems (Software Catalog, etc.)
+- [ ] **Copilot Skills** are reusable instruction packages from the Knowledge Base
+- [ ] I can use Copilot for non-code tasks: PRDs, analysis, announcements, architecture
+- [ ] I know how to create a branch, commit, push, and open a PR
+- [ ] I know where to get help: `#github-copilot-community-of-practice` and `#help-juno`
+
+---
+
+<!-- _class: content -->
 # The AI-First Mindset
 
 This is bigger than one workshop.
@@ -312,21 +327,6 @@ You can do this on your next project. **Today.**
 | Copilot Community | `#github-copilot-community-of-practice` on Slack |
 | Help with Juno | `#help-juno` on Slack |
 | This repo | `github.com/MichaelBinz/juno-feedback-digest` |
-
----
-
-<!-- _class: content -->
-# What I Learned Today
-
-*Self-check — do you understand these?*
-
-- [ ] Copilot's quality depends on the **context** it's given
-- [ ] `copilot-instructions.md` gives Copilot project-level context automatically
-- [ ] **MCP** lets Copilot query external systems (Software Catalog, etc.)
-- [ ] **Copilot Skills** are reusable instruction packages from the Knowledge Base
-- [ ] I can use Copilot for non-code tasks: PRDs, analysis, announcements, architecture
-- [ ] I know how to create a branch, commit, push, and open a PR
-- [ ] I know where to get help: `#github-copilot-community-of-practice` and `#help-juno`
 
 ---
 
