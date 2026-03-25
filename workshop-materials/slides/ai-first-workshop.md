@@ -6,8 +6,8 @@ paginate: true
 ---
 
 <!-- _class: cover -->
-# AI-First Hands-On Workshop
-## Working with GitHub Copilot the right way
+# Juno Lean Coffee: Agentic Engineering in Practice
+## Special Edition: Getting started with AI - from Zero to Pull Request
 
 Juno DevRel · Dynatrace R&D
 
