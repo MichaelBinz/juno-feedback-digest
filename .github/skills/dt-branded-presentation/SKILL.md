@@ -2,11 +2,17 @@
 name: dt-branded-presentation
 description: >-
   Dynatrace brand guidelines, design tokens, and slide deck creation with Marp or reveal.js.
-  Use when: creating or editing a Marp (.md) or reveal.js (.html) slide deck, applying the
-  Dynatrace slide template, choosing slide layouts, reviewing slides for brand compliance,
-  looking up --dt-* CSS variables or --r-* reveal.js variables, DTFlow font weights or sizes,
-  logo variants, or background assets. Also triggers for: "Dynatrace Marp template",
-  "DTFlow font", "brand colours", "slide layout", "design tokens", "slide compliance check".
+  Use when: creating, editing, regenerating, rebuilding, or exporting ANY presentation,
+  slide deck, or slides — whether Marp (.md), reveal.js (.html), or HTML output.
+  Also use when: applying the Dynatrace slide template, choosing slide layouts, reviewing
+  slides for brand compliance, looking up --dt-* CSS variables or --r-* reveal.js variables,
+  DTFlow font weights or sizes, logo variants, or background assets.
+  Also triggers for: "presentation", "slides", "slide deck", "create a presentation",
+  "generate slides", "build slides", "export slides", "fix slide formatting",
+  "regenerate HTML", "Dynatrace Marp template", "DTFlow font", "brand colours",
+  "slide layout", "design tokens", "slide compliance check".
+  ALWAYS use this skill when the user mentions presentations or slides in any context —
+  even troubleshooting, fixing formatting, or regenerating output files.
   Do NOT use for standalone graphics, infographics, animations, or PNG exports — use
   dt-branded-graphics for those.
 ---
@@ -17,7 +23,11 @@ Apply Dynatrace visual identity — colours, typography, layouts, and content ru
 
 ## When to Use
 
-- Creating a new Marp/Marpit or reveal.js presentation
+- Creating a new presentation or slide deck (any format)
+- Editing, updating, or adding slides to an existing presentation
+- Regenerating or rebuilding HTML output from a Marp source
+- Fixing formatting, theme, or styling issues in presentations
+- Exporting slides to HTML or other formats
 - Reviewing slides for brand compliance
 - Looking up Dynatrace colours, fonts, or design tokens
 - Choosing the right slide layout for content
@@ -143,10 +153,11 @@ Once answers are collected, proceed to the matching procedure below.
    ```bash
    ln -sf /path/to/.github/skills/dt-branded-presentation/templates/marpit/theme ./theme
    ```
-8. Export with Marp CLI:
+8. Export with Marp CLI. **Use `--theme-set` to register the custom theme** (the frontmatter `theme: dynatrace` resolves against it):
    ```bash
-   marp presentation.md --theme theme/assets/dynatrace.css --html --allow-local-files -o output.html
+   npx @marp-team/marp-cli --theme-set theme/dynatrace.css --bespoke.progress --html presentation.md -o output.html
    ```
+   > **Warning:** Do NOT use `--theme` alone — that overrides the theme name but does not register custom CSS. The `--theme-set` flag is required for custom themes defined with `/* @theme dynatrace */` in CSS.
 
 ### Create a reveal.js Presentation
 
@@ -170,17 +181,17 @@ Generate self-contained HTML files that can be opened directly in a browser for 
 
 **From a Marp source file:**
 
-1. Export from `md/` to `html/`:
+1. Export using `--theme-set` to register the Dynatrace theme:
    ```bash
-   npx @marp-team/marp-cli --theme theme/assets/dynatrace.css --html --allow-local-files md/graphic.md -o html/graphic.html
+   npx @marp-team/marp-cli --theme-set theme/dynatrace.css --bespoke.progress --html presentation.md -o output.html
    ```
-2. The HTML output is self-contained (CSS inlined, JS embedded) but still references `theme/assets/` for fonts and images — that's why the `html/theme` symlink is needed.
+2. The HTML output is self-contained (CSS inlined, JS embedded) but still references `theme/assets/` for fonts and images — ensure the `theme/` folder is accessible from the working directory.
 
 **Batch export all Marp sources:**
 ```bash
-for f in md/*.md; do
+for f in *.md; do
   base=$(basename "$f" .md)
-  npx @marp-team/marp-cli --theme theme/assets/dynatrace.css --html --allow-local-files "$f" -o "html/${base}.html"
+  npx @marp-team/marp-cli --theme-set theme/dynatrace.css --bespoke.progress --html "$f" -o "${base}.html"
 done
 ```
 
@@ -215,6 +226,20 @@ done
 2. Use `--dt-` prefixed CSS custom properties in stylesheets.
 3. For reveal.js, also use `--r-` prefixed variables mapped to the same palette.
 
+### Regenerate HTML from Existing Marp Source
+
+**Use this whenever the HTML output is out of date, has lost formatting, or the `.md` source has been edited.**
+
+1. Locate the Marp `.md` source file and its companion `theme/` directory.
+2. Verify the `.md` frontmatter includes `theme: dynatrace`.
+3. Verify `theme/dynatrace.css` exists and contains `/* @theme dynatrace */`.
+4. Run from the directory containing the `.md` file:
+   ```bash
+   npx @marp-team/marp-cli --theme-set theme/dynatrace.css --bespoke.progress --html <source>.md -o <output>.html
+   ```
+5. **Always use `--theme-set`** — omitting it produces HTML with the Marp default theme instead of the Dynatrace theme. This is the #1 cause of "lost formatting".
+6. Open the output in a browser and run the [Visual QA](#visual-qa) checks.
+
 ## Common Pitfalls
 
 | Pitfall | Symptom | Fix |
@@ -224,3 +249,5 @@ done
 | **Missing backgrounds/logos** | No gradient bar, no logo, plain white/navy slides | Same path issue as fonts. The `theme/assets/backgrounds/` and `theme/assets/images/` folders must be accessible relative to the `.md` file. |
 | **Wrong logo variant on dark slides** | Colour or black logo on navy background instead of white | The white logo on dark slides is set via HTML `<img src="dt-logo-white-horizontal.svg">` markup — not CSS. If the wrong logo variant appears, fix the `src` in the markup. The `background-image: none` CSS override only suppresses the light-slide CSS logo; the dark-slide HTML logo is separate. |
 | **Skipping the brief** | Rework after delivering wrong format or size | Always run the [Understand the Brief](#understand-the-brief) procedure before production. |
+| **HTML generated without custom theme** | Slides render with Marp default theme (wrong fonts, colours, layout) instead of Dynatrace branding | The Marp CLI `--theme-set theme/dynatrace.css` flag was omitted during export. **Always** use `--theme-set` to register the custom theme CSS. The `theme: dynatrace` frontmatter only works if the CLI knows where to find the theme definition. |
+| **Using `--theme` instead of `--theme-set`** | Theme not applied, or wrong theme applied | `--theme` overrides the theme *name* but doesn't register custom CSS files. Use `--theme-set` to register the `dynatrace.css` file, then let frontmatter `theme: dynatrace` select it. |
