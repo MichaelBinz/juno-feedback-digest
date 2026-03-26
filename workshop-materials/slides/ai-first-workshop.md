@@ -33,6 +33,19 @@ Your guide: **`workshop-materials/checklist.md`** — open it now.
 ---
 
 <!-- _class: content -->
+# Who Are We?
+
+**Your workshop facilitators**
+
+**Michael Binz**
+Used to be an engineer, but not for the past 10+ years. New to Agentic Development — I just went through the struggle.
+
+**Maximilian Zauner**
+Actual engineer. Here to help with the tough questions.
+
+---
+
+<!-- _class: content -->
 # Prerequisites
 
 *Confirm these before we start. If anything is missing, ask a facilitator.*
@@ -268,13 +281,18 @@ Create a pull request with all my changes.
 <!-- _class: content -->
 # Bonus — Go Deeper
 
-*Finished early? Try these stretch goals:*
+*Finished early? Pick the track that interests you most:*
 
-- Write a `copilot-instructions.md` for one of your own projects
-- Use `dt-skill-creator` to design a new Copilot Skill
-- Browse the Juno Portal at `juno.internal.dynatrace.com`
-- Explore the Software Catalog — find your team's services
-- Ask Copilot to explain a concept from the glossary in your own words
+**Group 1 — AI Setup**
+Write a `copilot-instructions.md` for your own project · Use `dt-skill-creator` to design a new Copilot Skill
+
+**Group 2 — Juno**
+Browse the Juno Portal at `juno.internal.dynatrace.com` · Explore the Software Catalog — find your team's services
+
+**Group 3 — DT App Development**
+Check-out existing guides to get started.
+
+[App Dev with AI (official)](https://developer.dynatrace.com/quickstart/app-development-with-ai/#setup-instructions) · [Product Builder / MCP](https://dynatrace.sharepoint.com/sites/RnD/SitePages/Product-Builder.aspx) · [Vibe Coding Guide](https://dynatrace.sharepoint.com/sites/ProdOps/SitePages/Vibecoding.aspx) · [Christoph's Practical Guide](https://dynatrace.sharepoint.com/sites/Observability/SitePages/AI-Engineering-Christophs-Practical-Guide.aspx)
 
 ---
 
@@ -326,7 +344,6 @@ You can do this on your next project. **Today.**
 | R&D AI Knowledge Base | `github.com/Dynatrace-Internal/rnd-ai-knowledgebase` |
 | Copilot Community | `#github-copilot-community-of-practice` on Slack |
 | Help with Juno | `#help-juno` on Slack |
-| This repo | `github.com/MichaelBinz/juno-feedback-digest` |
 
 ---
 

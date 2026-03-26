@@ -158,13 +158,26 @@ The instructor will walk through the Git workflow and show what a completed pull
 
 ## Bonus — Go Deeper
 
-*Finished early? Try these stretch goals.*
+*Finished early? Pick the track that interests you most.*
+
+### Group 1 — AI Setup
 
 - [ ] Write a `copilot-instructions.md` for one of your own projects
 - [ ] Use `dt-skill-creator` to design a new Copilot Skill
+
+### Group 2 — Juno
+
 - [ ] Browse the Juno Portal at `juno.internal.dynatrace.com`
 - [ ] Explore the Software Catalog — find your team's services
-- [ ] Ask Copilot to explain a concept from the [glossary](./glossary.md) in your own words
+
+### Group 3 — DT App Development
+
+Check out existing guides to get started.
+
+- [ ] [App Dev with AI (official quickstart)](https://developer.dynatrace.com/quickstart/app-development-with-ai/#setup-instructions)
+- [ ] [Product Builder / App Development MCP](https://dynatrace.sharepoint.com/sites/RnD/SitePages/Product-Builder.aspx)
+- [ ] [Vibe Coding Guide](https://dynatrace.sharepoint.com/sites/ProdOps/SitePages/Vibecoding.aspx)
+- [ ] [Christoph's Practical Guide to AI Engineering](https://dynatrace.sharepoint.com/sites/Observability/SitePages/AI-Engineering-Christophs-Practical-Guide.aspx)
 
 ---
 
