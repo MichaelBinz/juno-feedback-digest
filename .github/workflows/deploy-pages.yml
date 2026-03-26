@@ -27,6 +27,15 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Resolve symlinks in slides directory
+        run: |
+          cd workshop-materials/slides
+          for link in $(find . -type l); do
+            target=$(readlink -f "$link")
+            rm "$link"
+            cp -r "$target" "$link"
+          done
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
