@@ -86,6 +86,8 @@ The **R&D AI Knowledge Base** gives you MCP servers and Copilot Skills — no pe
   ```
 - [ ] Reload VS Code if prompted
 
+> **Authentication issues?** If you see an error accessing the marketplace, run `gh auth login --web` in a terminal first, then repeat the step.
+
 ### Install the Juno MCP server
 
 Now that the marketplace is registered, you can install the MCP server as an extension:
@@ -96,11 +98,23 @@ Now that the marketplace is registered, you can install the MCP server as an ext
 
 > 📖 Source: `github.com/Dynatrace-Internal/rnd-ai-knowledgebase`
 
+> **Troubleshooting — manual setup:** If the MCP server installs but doesn't connect, add it manually:
+> 1. Open VS Code Settings (`Ctrl+,` / `Cmd+,`) and search for `mcp`
+> 2. Click **Edit in settings.json** next to `mcp servers`
+> 3. Add the following entry inside the `"servers"` object:
+>    ```json
+>    "juno": {
+>      "url": "https://mcp.juno.internal.dynatrace.com/mcp",
+>      "type": "http"
+>    }
+>    ```
+> 4. Save the file — Copilot will pick it up immediately, no restart needed
+
 ### Try an MCP query
 
 - [ ] Open Copilot Chat and try:
   ```
-  Who owns the auth service?
+  Who owns the token-service?
   ```
 - [ ] Watch Copilot query the Juno Software Catalog — it's pulling live data, not just reading local files
 

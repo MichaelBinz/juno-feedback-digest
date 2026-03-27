@@ -14,7 +14,7 @@ Use this data for feedback analysis tasks — ask Copilot to identify themes, su
 
 **[Entry 1]**  
 *Source: Slack / #help-juno*  
-> "The Juno Portal search is really hard to use. I searched for 'auth service' and got 30 results with no way to filter by team or tech stack. Ended up asking in Slack anyway."
+> "The Juno Portal search is really hard to use. I searched for 'token-service' and got 30 results with no way to filter by team or tech stack. Ended up asking in Slack anyway."
 
 ---
 
@@ -86,7 +86,7 @@ Use this data for feedback analysis tasks — ask Copilot to identify themes, su
 
 **[Entry 13]**  
 *Source: Slack / #platform*  
-> "Just used the GitHub Copilot integration with Juno MCP. It correctly answered 'who owns the auth service' without me having to look it up. Very cool."
+> "Just used the GitHub Copilot integration with Juno MCP. It correctly answered 'who owns the token-service' without me having to look it up. Very cool."
 
 ---
 

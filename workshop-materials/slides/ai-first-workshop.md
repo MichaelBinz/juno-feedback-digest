@@ -175,7 +175,7 @@ Choose **one task** and work on it using Copilot Chat. Save your output to a fil
 
 | What You Can Ask | What Happens |
 |-----------------|-------------|
-| *"Who owns the auth service?"* | Copilot queries the Juno Software Catalog |
+| *"Who owns the token-service?"* | Copilot queries the Juno Software Catalog |
 | *"What services does Team X own?"* | Live data, not local files |
 
 ---
@@ -184,7 +184,7 @@ Choose **one task** and work on it using Copilot Chat. Save your output to a fil
 # Live Demo: Juno MCP
 
 ```
-Who owns the auth service?
+Who owns the token-service?
 ```
 
 Watch Copilot:
@@ -217,7 +217,7 @@ Watch Copilot:
 ### 3. Try an MCP query
 
 ```
-Who owns the auth service?
+Who owns the token-service?
 ```
 
 ### 4. Explore Copilot Skills
